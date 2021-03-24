@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>HTML5全屏背景视频jQuery插件</title>
+	<link href="css/insideElementDemo.css" rel="stylesheet" type="text/css">
+	<!--[if IE]>
+		<script src="http://www.jq22.com/jquery/html5.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+
+	
+		<div id="container">
+		    <div id="main">
+		      <section class="section-first" data-vidbg-bg="mp4: media/mp4_video_1.3gp, poster: media/fallback.jpg" data-vidbg-options="loop: true, muted: true, overlay: false">
+		        <div class="text">
+		          <h1>Video Background</h1>
+		          <h3>Initialized by HTML</h3>
+		        </div>
+		      </section>
+		      <section class="section-second">
+		        <div class="text">
+		          <h1>Video Background + Overlay</h1>
+		          <h3>Initialized by javascript</h3>
+		        </div>
+		      </section>
+		    </div>
+		  </div>
+
+	
+	<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+	<script src="dist/vidbg.js"></script>
+	<script type="text/javascript">
+    jQuery(function($){
+          $('.section-second').vidbg({
+              'mp4': 'media/mp4_video_1.3gp',
+              'poster': 'media/fallback.jpg',
+          }, {
+            // Options
+            muted: true,
+            loop: true,
+			overlay: true,
+          });
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>LXY`S BLOG</title>
+  <icon>https://liuxiangyang.space/icon.png</icon>
+  
+  <link href="https://liuxiangyang.space/atom.xml" rel="self"/>
+  
+  <link href="https://liuxiangyang.space/"/>
+  <updated>2021-03-12T01:25:55.525Z</updated>
+  <id>https://liuxiangyang.space/</id>
+  
+  <author>
+    <name>刘向洋</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>记录内网应用http转为https进行访问(tomcat)</title>
+    <link href="https://liuxiangyang.space/2021/03/11/00372/"/>
+    <id>https://liuxiangyang.space/2021/03/11/00372/</id>
+    <published>2021-03-11T09:57:12.000Z</published>
+    <updated>2021-03-12T01:25:55.525Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Tomcat" scheme="https://liuxiangyang.space/categories/Tomcat/"/>
+    
+    
+    <category term="blog" scheme="https://liuxiangyang.space/tags/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>阿里云申请免费SSL证书</title>
+    <link href="https://liuxiangyang.space/2021/03/10/00370/"/>
+    <id>https://liuxiangyang.space/2021/03/10/00370/</id>
+    <published>2021-03-10T09:57:12.000Z</published>
+    <updated>2021-03-12T00:54:09.700Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Network" scheme="https://liuxiangyang.space/categories/Network/"/>
+    
+    
+    <category term="blog" scheme="https://liuxiangyang.space/tags/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>prometheus的安装步骤</title>
+    <link href="https://liuxiangyang.space/2021/03/06/00373/"/>
+    <id>https://liuxiangyang.space/2021/03/06/00373/</id>
+    <published>2021-03-06T09:57:12.000Z</published>
+    <updated>2021-03-12T01:28:52.938Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="DevOps" scheme="https://liuxiangyang.space/categories/DevOps/"/>
+    
+    
+    <category term="blog" scheme="https://liuxiangyang.space/tags/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>电脑硬件之-主板</title>
+    <link href="https://liuxiangyang.space/2021/02/24/00369/"/>
+    <id>https://liuxiangyang.space/2021/02/24/00369/</id>
+    <published>2021-02-24T09:57:12.000Z</published>
+    <updated>2021-02-26T08:24:15.209Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="IT HelpDesk" scheme="https://liuxiangyang.space/categories/IT-HelpDesk/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>服务器window2016数据中心版安装Oracle11g时遇到INS-13001环境不满足最低要求</title>
+    <link href="https://liuxiangyang.space/2021/02/24/00363/"/>
+    <id>https://liuxiangyang.space/2021/02/24/00363/</id>
+    <published>2021-02-24T09:57:12.000Z</published>
+    <updated>2021-02-26T05:25:58.923Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Oralce" scheme="https://liuxiangyang.space/categories/Oralce/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>笔记本内存条选购指南</title>
+    <link href="https://liuxiangyang.space/2021/02/06/00366/"/>
+    <id>https://liuxiangyang.space/2021/02/06/00366/</id>
+    <published>2021-02-06T02:57:12.000Z</published>
+    <updated>2021-02-06T06:48:43.504Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="IT HelpDesk" scheme="https://liuxiangyang.space/categories/IT-HelpDesk/"/>
+    
+    
+    <category term="Computer" scheme="https://liuxiangyang.space/tags/Computer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算机硬件之-CPU</title>
+    <link href="https://liuxiangyang.space/2021/02/06/00368/"/>
+    <id>https://liuxiangyang.space/2021/02/06/00368/</id>
+    <published>2021-02-06T02:57:12.000Z</published>
+    <updated>2021-02-26T08:23:44.824Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="IT HelpDesk" scheme="https://liuxiangyang.space/categories/IT-HelpDesk/"/>
+    
+    
+    <category term="Computer" scheme="https://liuxiangyang.space/tags/Computer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Window时间服务器相关设置</title>
+    <link href="https://liuxiangyang.space/2020/11/15/00367/"/>
+    <id>https://liuxiangyang.space/2020/11/15/00367/</id>
+    <published>2020-11-15T09:57:12.000Z</published>
+    <updated>2021-02-26T06:53:06.993Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Window System" scheme="https://liuxiangyang.space/categories/Window-System/"/>
+    
+    
+    <category term="blog" scheme="https://liuxiangyang.space/tags/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>命令行版星球大战，回忆青春</title>
+    <link href="https://liuxiangyang.space/2020/11/10/00361/"/>
+    <id>https://liuxiangyang.space/2020/11/10/00361/</id>
+    <published>2020-11-10T09:57:12.000Z</published>
+    <updated>2021-02-26T08:30:31.564Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://liuxiangyang.space/categories/Linux/"/>
+    
+    
+    <category term="blog" scheme="https://liuxiangyang.space/tags/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>利用Nginx反向代理搭建本地yum服务器</title>
+    <link href="https://liuxiangyang.space/2020/11/08/00365/"/>
+    <id>https://liuxiangyang.space/2020/11/08/00365/</id>
+    <published>2020-11-08T09:57:12.000Z</published>
+    <updated>2020-11-23T06:03:55.019Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://liuxiangyang.space/categories/Linux/"/>
+    
+    
+    <category term="blog" scheme="https://liuxiangyang.space/tags/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算机硬件之-固态硬盘</title>
+    <link href="https://liuxiangyang.space/2020/11/08/00374/"/>
+    <id>https://liuxiangyang.space/2020/11/08/00374/</id>
+    <published>2020-11-08T09:57:12.000Z</published>
+    <updated>2021-03-12T01:30:06.468Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="IT HelpDesk" scheme="https://liuxiangyang.space/categories/IT-HelpDesk/"/>
+    
+    
+    <category term="Computer" scheme="https://liuxiangyang.space/tags/Computer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Centos8安装并配置NFS服务</title>
+    <link href="https://liuxiangyang.space/2020/10/08/00354/"/>
+    <id>https://liuxiangyang.space/2020/10/08/00354/</id>
+    <published>2020-10-08T09:57:12.000Z</published>
+    <updated>2020-10-23T07:06:46.967Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://liuxiangyang.space/categories/Linux/"/>
+    
+    
+    <category term="nfs" scheme="https://liuxiangyang.space/tags/nfs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>云计算术语扫盲</title>
+    <link href="https://liuxiangyang.space/2020/09/27/00346/"/>
+    <id>https://liuxiangyang.space/2020/09/27/00346/</id>
+    <published>2020-09-27T06:57:13.000Z</published>
+    <updated>2020-10-23T07:19:37.235Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="YUN" scheme="https://liuxiangyang.space/categories/YUN/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>undertown服务器详解</title>
+    <link href="https://liuxiangyang.space/2020/09/27/00347/"/>
+    <id>https://liuxiangyang.space/2020/09/27/00347/</id>
+    <published>2020-09-27T06:57:12.000Z</published>
+    <updated>2020-10-23T05:41:15.661Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://liuxiangyang.space/categories/Linux/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>通过进程消耗情况了解CPU核数关系(top)</title>
+    <link href="https://liuxiangyang.space/2020/09/25/00359/"/>
+    <id>https://liuxiangyang.space/2020/09/25/00359/</id>
+    <published>2020-09-25T06:57:12.000Z</published>
+    <updated>2020-09-25T07:19:44.137Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://liuxiangyang.space/categories/Linux/"/>
+    
+    
+    <category term="top" scheme="https://liuxiangyang.space/tags/top/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PostgreSQL新手学习</title>
+    <link href="https://liuxiangyang.space/2020/09/21/00348/"/>
+    <id>https://liuxiangyang.space/2020/09/21/00348/</id>
+    <published>2020-09-21T06:57:12.000Z</published>
+    <updated>2020-10-23T06:32:53.203Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="PostgreSQL" scheme="https://liuxiangyang.space/categories/PostgreSQL/"/>
+    
+    
+    <category term="postgresql" scheme="https://liuxiangyang.space/tags/postgresql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Zabbix5.0安装教程</title>
+    <link href="https://liuxiangyang.space/2020/09/20/00340/"/>
+    <id>https://liuxiangyang.space/2020/09/20/00340/</id>
+    <published>2020-09-20T09:57:12.000Z</published>
+    <updated>2020-09-25T00:55:48.012Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Zabbix" scheme="https://liuxiangyang.space/categories/Zabbix/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Shopify电商网站修改</title>
+    <link href="https://liuxiangyang.space/2020/09/08/00353/"/>
+    <id>https://liuxiangyang.space/2020/09/08/00353/</id>
+    <published>2020-09-08T09:57:12.000Z</published>
+    <updated>2020-09-16T06:47:54.464Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Web" scheme="https://liuxiangyang.space/categories/Web/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Linux中安装Bashtop监控性能</title>
+    <link href="https://liuxiangyang.space/2020/09/08/00360/"/>
+    <id>https://liuxiangyang.space/2020/09/08/00360/</id>
+    <published>2020-09-08T09:57:12.000Z</published>
+    <updated>2020-09-10T08:06:02.660Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://liuxiangyang.space/categories/Linux/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Linux服务器优化内容</title>
+    <link href="https://liuxiangyang.space/2020/09/07/00339/"/>
+    <id>https://liuxiangyang.space/2020/09/07/00339/</id>
+    <published>2020-09-07T09:57:12.000Z</published>
+    <updated>2020-09-16T06:48:08.325Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://liuxiangyang.space/categories/Linux/"/>
+    
+    
+    <category term="优化" scheme="https://liuxiangyang.space/tags/%E4%BC%98%E5%8C%96/"/>
+    
+  </entry>
+  
+</feed>

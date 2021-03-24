@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>再见了，英雄联盟</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            background-color: #e8e3da;
+        }
+
+        ul {
+            list-style: none
+        }
+
+        #wrap {
+            width: 980px;
+            height: 500px;
+        }
+
+        #wrap li {
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: transform 1500ms ease-out;
+            background-color: white;
+        }
+
+        .box {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            transition: transform 1500ms ease-out;
+        }
+
+        .center {
+            margin: auto;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+
+        }
+    </style>
+	<style>
+      .aplayer {
+	position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    z-index: 99;
+    overflow: visible;
+    max-width: 90px;
+    box-shadow: none;
+	}
+</style>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+	<script src="http://www.jq22.com/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            var collums = 5;//列
+            var rows = 5;//行
+            var wrap = $('#wrap');
+            var w = wrap.width() / rows;
+            var h = wrap.height() / collums;
+
+
+            for (var r = 0; r < rows; r++) {
+                for (var c = 0; c < collums; c++) {
+
+                    $('<li><div class="box"></div></li>').width(w).height(h)
+                            .css({
+                                'left': w * c + 'px',
+                                'top': h * r + 'px',
+                                'transform': 'scale(0.9) rotate(' + (Math.random() * 40 - 20) + 'deg) ' +
+                                'translateX(' + (30*c-60) + 'px)' +
+                                'translateY(' + (30*r-60) + 'px)'
+                            })
+                            .find('.box')
+                            .css({
+                                'background-image': 'url(images/' + (r * collums + c) + '.jpg)',
+                                'transform': 'scale(0.9)'
+                            })
+                            .end()
+                            .appendTo(wrap)
+                }
+            }
+
+            var change = true;
+            wrap.find('li').on('click', function () {
+                if (change == true) {
+                    var bgImg = $(this).find('div').css('background-image');
+                    var bgLeft = 0;
+                    var bgTop = 0;
+                    $('#wrap li').each(function (index) {
+                        var $this=$(this);
+                        $(this).delay(40*index).animate({"opacity":0},200, function () {
+                            $this.css({
+                                'transform': ' rotate(0deg) ' +
+                                'translateX(0)' +
+                                'translateY(0)'
+                            });
+                            $this.find('div').css({
+                                'background-image': bgImg,
+                                'background-size': 'auto',
+                                'backgroundPositionX': -bgLeft,
+                                'backgroundPositionY': -bgTop,
+                                'transform': 'scale(1)'
+                            });
+                            bgLeft += 196;
+                            if (bgLeft >= 980) {
+                                bgTop += 100;
+                                bgLeft = 0;
+                            }
+                            $this.animate({"opacity":1},300);
+                        })
+
+
+
+
+                    });
+                    change = false;
+
+                } else if (change == false) {
+
+                    $('#wrap li').each(function (index) {
+                        var c=index %collums;
+                        var r=parseInt(index/collums);
+                        var $this=$(this);
+                        $(this).delay(40*index).animate({"opacity":0},200, function () {
+                            $this.css({
+                                'transform': 'rotate(' + (Math.random() * 40 - 20) + 'deg)' +
+                                'translateX(' + (30*c-60) + 'px)' +
+                                'translateY(' + (30*r-60) + 'px)'
+                            });
+                            $this.find('div').css({
+                                'background-image': 'url(images/' + index + '.jpg)',
+                                'background-size': 'cover',
+                                'transform': 'scale(0.9)'
+                            });
+                            $this.animate({"opacity":1},200);
+                        })
+
+                    });
+                    change = true;
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+<canvas id="a"></canvas>
+<div class="aplayer" data-id="527824482" data-server=”netease" data-type="song" data-autoplay=”true” data-mode=”circulation”></div>
+<script>
+    var c=document.getElementById("c");
+    var	ctx=c.getContext("2d");
+    c.width=window.innerWidth;
+    c.height=window.innerHeight;
+    //				ctx.fillRect(0,0,100,100);
+    //				a,b,c,d分别代表x方向偏移,y方向偏移,宽，高
+    var string1 = "abcdefghijklmnopqrstuvwxyz";
+    string1.split("");
+    var fontsize=20;
+    columns=c.width/fontsize;
+    var drop = [];
+    for(var x=0;x<columns;x++)
+    {
+        drop[x]=0;
+    }
+    function drap(){
+        ctx.fillStyle="rgba(0,0,0,0.07)";
+        ctx.fillRect(0,0,c.width,c.height);
+        ctx.fillStyle="#0F0";
+        ctx.font=fontsize+"px arial";
+        for(var i=0;i<drop.length;i++){
+            var text1=string1[Math.floor(Math.random()*string1.length)];
+            ctx.fillText(text1,i*fontsize,drop[i]*fontsize);
+            drop[i]++;
+            if(drop[i]*fontsize>c.height&&Math.random()>0.9){//90%的几率掉落
+                drop[i]=0;
+            }
+        }
+    }
+    setInterval(drap,20);
+</script>
+<ul id="wrap" class="center">
+</ul>
+<script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+</html>

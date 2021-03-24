@@ -1,0 +1,246 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><!-- 响应式设计 -->
+<meta name="renderer" content="webkit"><!-- 默认使用webkit内核 -->
+<meta name="format-detection" content="telephone=no"><!-- 关闭浏览器自动识别电话号码 -->
+
+<title>ToCms</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+
+<!-- CSS -->
+<link href="css/alert.css" rel="stylesheet">
+<link href="css/main.css" rel="stylesheet">
+
+<!-- JavaScript -->
+<!-- sea.js 关联 yuegong.js、househighcharts.js、alert.js、lazyload.js、jquery.last.js和alert.css-->
+<script src="js/sea.js" type="text/javascript"></script>
+
+<!-- CSS3，Media Query向下兼容IE6-IE8 -->
+<!--[if lte IE 8]>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+<div class="yuegong mt16">
+	<div class="con_c cf clearfix">
+		<div class="tools-mod">
+			<h4>购房预算</h4>
+			<div class="tools-item tools-item1 clearfix">
+				<label class="fl">选择户型</label>
+				<div class="select-item fl">
+					<div class="xf-select xf-select-max">
+						<div class="text">
+							<span>3室2厅1卫  100m²</span>
+							<input type="hidden" name="val_housetype" id="housetype" value="100">
+							<i class="lp-icons icon-tip"></i>
+						</div>
+						<ul>
+							<li data-code="100">3室2厅1卫  100m²</li>
+							<li data-code="80">2室2厅1卫  80m²</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="tools-item tools-item2 clearfix">
+				<label class="fl" data-junjia="27000" id="zongjia">估算总价</label>
+				<div class="select-item fl" id="label_price">-</div>
+			</div>
+			<div class="tools-item tools-item3 clearfix">
+				<label class="fl" id="label_loanratio">按揭成数</label>
+				<div class="select-item fl">
+					<div class="xf-select xf-select-max">
+						<div class="text">
+							<span>7成</span>
+							<input type="hidden" name="val_loanratio" id="val_loanratio" value="70">
+							<i class="lp-icons icon-tip"></i>
+						</div>
+						<ul>
+							<li data-code="10">1成</li>
+							<li data-code="20">2成</li>
+							<li data-code="30">3成</li>
+							<li data-code="40">4成</li>
+							<li data-code="50">5成</li>
+							<li data-code="60">6成</li>
+							<li data-code="70">7成</li>
+							<li data-code="80">8成</li>
+							<li data-code="90">9成</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="tools-item tools-item4 clearfix">
+				<label class="fl">贷款类别</label>
+				<div class="select-item fl">
+					<div class="xf-select xf-select-max">
+						<div class="text">
+							<span>商业贷款</span>
+							<input type="hidden" name="val_loantype" id="val_loantype" value="1">
+							<i class="lp-icons icon-tip"></i>
+						</div>
+						<ul>
+							<li data-code="1">商业贷款</li>
+							<li data-code="2">公积金贷款</li>
+							<li data-code="3">组合贷款</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="tools-item tools-item5 clearfix none" id="content_scale">
+				<label class="fl">贷款金额</label>
+				<div class="select-item fl loan-item">
+					<p class="gray" id="label_totalprice"></p>
+					<div class="loan-style">
+						<span class="lab gray">公积金</span>
+						<input type="text" class="int-text int-text-mid" id="val_loanfund">
+						<em>万元</em>
+						<span id="gjjtip" class="com-msg none">
+							<i class="lp-icons error-icon"></i>
+							<span>不能为空！</span>
+						</span>
+					</div>
+					<div class="loan-style">
+						<span class="lab gray">商业性</span>
+						<input type="text" class="int-text int-text-mid" id="val_loanbussiness">
+						<em>万元</em>
+						<span id="sdtip" class="com-msg none">
+							<i class="lp-icons error-icon"></i>
+							<span>不能为空！</span>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="tools-item tools-item6 clearfix">
+				<label class="fl">贷款时间</label>
+				<div class="select-item fl">
+					<div class="xf-select xf-select-max">
+						<div class="text">
+							<span>20年（240个月）</span>
+							<input type="hidden" name="val_loanmonth" id="val_loanmonth" value="20">
+							<i class="lp-icons icon-tip"></i>
+						</div>
+						<ul>
+							<li data-code="1">1年（12期）</li>
+							<li data-code="2">2年（24期）</li>
+							<li data-code="3">3年（36期）</li>
+							<li data-code="4">4年（48期）</li>
+							<li data-code="5">5年（60期）</li>
+							<li data-code="6">6年（72期）</li>
+							<li data-code="7">7年（84期）</li>
+							<li data-code="8">8年（96期）</li>
+							<li data-code="9">9年（108期）</li>
+							<li data-code="10">10年（120期）</li>
+							<li data-code="11">11年（132期）</li>
+							<li data-code="12">12年（144期）</li>
+							<li data-code="13">13年（156期）</li>
+							<li data-code="14">14年（168期）</li>
+							<li data-code="15">15年（180期）</li>
+							<li data-code="16">16年（192期）</li>
+							<li data-code="17">17年（204期）</li>
+							<li data-code="18">18年（216期）</li>
+							<li data-code="19">19年（228期）</li>
+							<li data-code="20">20年（240期）</li>
+							<li data-code="21">21年（252期）</li>
+							<li data-code="22">22年（264期）</li>
+							<li data-code="23">23年（276期）</li>
+							<li data-code="24">24年（288期）</li>
+							<li data-code="25">25年（300期）</li>
+							<li data-code="26">26年（312期）</li>
+							<li data-code="27">27年（324期）</li>
+							<li data-code="28">28年（336期）</li>
+							<li data-code="29">29年（348期）</li>
+							<li data-code="30">30年（360期）</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="tools-btn">
+				<a href="javascript:;" class="btn btn-b" id="btn_startup">开始计算</a>
+			</div>
+		</div>
+		<div class="result-mod">
+			<h4>计算结果<span>以等额本息计算结果，数据仅供参考</span></h4>
+			<!-- charts-mod Starts -->
+			<div class="charts-mod">
+				<div class="charts-box" id="result-charts"></div>
+				<div class="text-box">
+					<h3>
+						<b>月均还款</b>
+						<span class="price">-</span>
+						<em>元</em>
+					</h3>
+					<ul class="legend">
+						<li class="legend-pay">
+							<i class="lp-icons dot-1"></i>
+							<span>-</span>
+						</li>
+						<li class="legend-price">
+							<i class="lp-icons dot-2"></i>
+							<span>-</span>
+						</li>
+						<li class="legend-rate">
+							<i class="lp-icons dot-3"></i>
+							<span>-</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<p class="result-tips">备注：以等额本息计算结果，数据仅供参考</p>
+			<!-- charts-mod End -->
+		</div>
+	</div>
+</div>
+<!--本页js 开始-->
+<script>
+seajs.use("yuegong");
+var line = echarts.init(document.getElementById('line'));
+line.setOption({
+    color:["#dc0000"],
+    title: {
+        x: '30px',
+        text: '房价走势  (元/平米)',
+        textStyle: {
+            fontSize: '18',
+            color: '#4c4c4c',
+            fontWeight: 'bolder'
+        }
+    },
+    tooltip: {
+        trigger: 'axis'
+    },
+    toolbox: {
+        show: true,
+        feature: {
+            dataZoom: {
+                yAxisIndex: 'none'
+            },
+            dataView: {readOnly: false},
+            magicType: {type: ['line', 'bar']}
+        }
+    },
+    xAxis:  {
+        type: 'category',
+        boundaryGap: false,
+        data: ['2016-02-01','2016-08-01','2017-02-01','2017-08-01','2018-02-01'],
+        axisLabel: {
+            interval:0
+        }
+    },
+    yAxis: {
+        type: 'value'
+    },
+    series: [
+        {
+            name:'房价',
+            type:'line',
+            data:[23000, 42000, 18000,35000,34000]
+        }
+    ]
+}) ;
+</script>
+<!--本页js 结束-->
+</body>
+</html>

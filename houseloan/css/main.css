@@ -1,0 +1,96 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Reset */
+* {margin: 0; padding: 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+body {background-color: #fff; color: #333; font-family: Arial, "Microsoft YaHei", 微软雅黑; line-height: 1.5;}
+body, textarea, input, button, select, fieldset, legend {outline: 0;}
+header, footer, section, article, aside, nav, address, menu {display: block;}
+html, body, img, iframe, abbr {border: 0;}
+table {border-collapse: collapse; border-spacing: 0;}
+caption, th {text-align: left; font-weight: normal;}
+input, select, textarea { outline: none; font: inherit; font-family: Arial, "Microsoft YaHei", 微软雅黑;}
+input:disabled,textarea:disabled,select:disabled {background: #eee;}
+select {background: #fff;}
+textarea {overflow: auto; resize: none; line-height: 1.5; padding-top: 5px; padding-bottom: 5px;}
+label, button {cursor: pointer;}
+ol, ul, li, dl, dt, dd {list-style-type: none;}
+h1, h2, h3, h4, h5, h6, small {font-size: 100%;}
+h1, h2, h3, h4, h5, h6, em {font-weight: normal;}
+a, a:hover {color: #333; text-decoration: none;}
+samp {font-family: inherit;}
+address {font-style: normal;}
+hr {border: 0; border-top: 1px solid #ddd;}
+img {display:inline-block; border: 0; vertical-align: middle; max-width: 100%; height: auto;}
+.clearfix:after { content: "."; display: block; clear: both; height: 0; overflow: hidden; visibility: hidden; }
+.clearfix {zoom: 1;}
+
+/*房价走势*/
+body{ background: #f9f9f9; padding: 120px 0;}
+.yuegong .con_c{ width: 780px; margin: 0 auto;}
+.yuegong .tools-mod {width: 390px;float: left;position: relative;z-index: 2;}
+.yuegong .result-mod { width: 388px; float: left;}
+.yuegong h4 { font-size: 1.5em; line-height: 1; margin-bottom: 40px;}
+.yuegong h4 span{ font-size: 0.6em; margin-left: 10px; color: #999999;}
+.tools-mod .xf-select { float: left; position:relative;}
+.tools-mod .tools-item {margin-bottom: 20px}
+.tools-mod .tools-item label {width: 70px; line-height: 50px; color: #666666; font-size:14px; float: left;}
+.tools-mod .tools-item1 .xf-select .text {border: 1px solid #eeeeee}
+.tools-mod .tools-item2 p { line-height: 50px; height: 50px; border: 1px solid #eeeeee; width: 250px; padding-left: 10px; margin-left: 70px; background: #ffffff;}
+.tools-mod .tools-item2 p strong { font-size: 20px; line-height: 20px; margin-right: 8px; font-weight: normal}
+.tools-mod .tools-item2 p span { color: #999; font-size: 14px; margin-left: 5px}
+.tools-mod .tools-item2 p em { font-size: 16px; line-height: 16px; margin: 0 5px}
+.tools-mod .tools-item5 label { line-height: 40px;}
+.tools-mod .loan-item { padding-top: 13px}
+.tools-mod .loan-item p.gray { font-size: 14px; line-height: 14px}
+.tools-mod .loan-item .int-text { margin-left: 5px}
+.tools-mod .loan-item .int-text-mid { width: 120px}
+.tools-mod .loan-item .loan-style { margin-top: 20px; padding-left: 50px;}
+.tools-mod .loan-item .com-msg { margin-left: 9px}
+.tools-mod .tools-btn { width: 200px; margin: 50px auto 0 auto;}
+.tools-mod .tools-btn .btn-b {display: block; height: 50px; line-height: 50px !important; font-size: 22px; position: relative; z-index: 1; border-radius:3px; background: #dc0000; color: #ffffff; text-align: center;}
+.xf-select { display: inline-block; *display: inline; *zoom:1;z-index: 9; cursor: pointer}
+.xf-select .text {position: relative;background: #ffffff;height: 34px;line-height: 34px;border: 1px solid #eeeeee;padding-right: 30px	}
+.xf-select .text,.xf-select li { padding-left: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis}
+.xf-select-max { font-size: 16px}
+.xf-select-min { font-size: 14px}
+.xf-select-max .text { width: 250px; height: 50px; line-height: 50px;}
+.xf-select-min .text { width: 58px}
+.xf-select .text .icon-tip {width:17px; height:10px; line-height: 0;position: absolute;top: 20px;right: 8px;background: url(../images/ico_321qe.png)no-repeat;}
+.xf-select ul { display: none; position: absolute; left: 0; top: 50px; width: 100%; background: #ffffff; color: #333; border-top: 1px solid #CCC; border-bottom: 1px solid #CCC; overflow-y: auto; max-height: 210px; _height: 210px}
+.xf-select li { height: 35px; line-height: 35px; border-left: 1px solid #CCC; border-right: 1px solid #CCC}
+.xf-select li.on {color:#ffffff; background:#f80;}
+.xf-select .option-hv { background: #62ab00; color: #FFF}
+.xf-select .option-dis { color: #999; cursor: default}
+.xf-select-fo { position: relative}
+.xf-select-fo .text { border: 1px solid #62ab00}
+.xf-select-fo .text .icon-tip { background-position: -110px -160px}
+.xf-select-fo ul { display: block}
+.result-mod .charts-mod { overflow: hidden; zoom:1}
+.charts-mod .charts-box { width: 300px; height: 300px; margin: 0 auto;}
+.charts-mod .text-box { margin: 0 auto; width: 250px;}
+.charts-mod .text-box h3 { font-size: 1.25em; height: 34px; overflow: hidden; text-align: right}
+.charts-mod .text-box h3 b{ font-weight: normal; float: left; margin-top: 5px;}
+.charts-mod .text-box .price { font: 400 36px/28px "Arial";color: #dc0000; line-height: 1;}
+.charts-mod .text-box li { width: 250px; margin: 5px 0 0; white-space: nowrap; position: relative;}
+.charts-mod .text-box li.on span { color: #c20000;}
+.charts-mod .lp-icons {	width: 17px;height: 14px;margin-right: 5px}
+.charts-mod .dot-1 { background-position: -85px -155px}
+.charts-mod .dot-2 { background-position: -35px -155px}
+.charts-mod .dot-3 { background-position: -60px -155px}
+.charts-mod .legend span { font-size: 14px}
+.charts-mod .legend span b{ font-weight: normal; position: absolute; right: 0; top: 3px;}
+.charts-mod .legend em {display: block; text-align: center; width: 250px; color: #333; white-space: nowrap}
+.charts-mod .curr,.legend .curr em { color: #62ab00}
+.result-tips { color: #999; text-align: center; font-size: 14px}
+.yuegong .mod:after,.tools-mod .tools-item:after { clear: both; content: "."; display: block; font-size: 0; height: 0; line-height: 0; visibility: hidden}
+.yuegong .mod,.tools-mod .tools-item {*zoom:1;}
+.lp-icons { display: inline-block; font-size: 0; overflow: hidden; vertical-align: middle; background-image: url("../images/ico_viewindex.png"); background-repeat: no-repeat}
+.error-icon { background-position: -268px -120px; width: 14px; height: 14px; margin-right: 5px}
+.date-icon { position: absolute; right: 10px; top: 14px; background-position: -267px -85px; width: 16px; height: 13px; cursor: pointer}
+.err-tips-icon { background-position: -303px -85px; width: 32px; height: 32px; margin-right: 14px}
+.ok-tips-icon { background-position: -355px -85px; width: 32px; height: 32px; margin-right: 14px}
+.none{display:none;}
+.no_border{border:0;}
+.yuegong em{ font-style: normal;}
