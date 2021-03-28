@@ -1,11 +1,10 @@
 @font-face{
-  font-family:'candy' ;  /* 字体名自定义即可 */
-  src:url('/fonts/candy.ttf'); /* 字体文件路径 */
+  font-family:'ali' ;  /* 字体名自定义即可 */
+  src:url('/fonts/ali.ttf'); /* 字体文件路径 */
   font-display : swap;
 }
-
 h1#site-title {
-  font-family: 'bangshu', sans-serif;
+  font-family: 'ali', sans-serif;
 }
 div#post{
   background: rgba(255, 255, 255, 0.9);
