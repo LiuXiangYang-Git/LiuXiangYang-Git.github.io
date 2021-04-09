@@ -1,0 +1,345 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ELK日志可视化快速搭建，亲测完善可用 | LXY`S BLOG</title><meta name="keywords" content="CSDN迁移"><meta name="author" content="刘向洋"><meta name="copyright" content="刘向洋"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="在工作中随着业务量的增大和项目的增多，日志量随之增大，我们需要对日志进行集中化管理，将所有机器上的日志信息收集、汇总到一起。完整的日志数据具有非常重要的作用： 1）信息查找:通过检索日志信息，定位相应的bug，找出解决方案。 2）服务诊断:通过对日志信息进行统计、分析，了解服务器的负荷和服务运行状态，找出耗时请求进行优化等等。 3）数据分析:如果是格式化的log，可以做进一步的数据分析，统计、聚">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ELK日志可视化快速搭建，亲测完善可用">
+<meta property="og:url" content="https://liuxiangyang.space/2019/04/10/00152/index.html">
+<meta property="og:site_name" content="LXY&#96;S BLOG">
+<meta property="og:description" content="在工作中随着业务量的增大和项目的增多，日志量随之增大，我们需要对日志进行集中化管理，将所有机器上的日志信息收集、汇总到一起。完整的日志数据具有非常重要的作用： 1）信息查找:通过检索日志信息，定位相应的bug，找出解决方案。 2）服务诊断:通过对日志信息进行统计、分析，了解服务器的负荷和服务运行状态，找出耗时请求进行优化等等。 3）数据分析:如果是格式化的log，可以做进一步的数据分析，统计、聚">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/cloudimg/img/20191129084320.png">
+<meta property="article:published_time" content="2019-04-10T07:59:52.000Z">
+<meta property="article:modified_time" content="2019-12-03T02:11:17.541Z">
+<meta property="article:author" content="刘向洋">
+<meta property="article:tag" content="CSDN迁移">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/cloudimg/img/20191129084320.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://liuxiangyang.space/2019/04/10/00152/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5/dist/instantsearch.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5/dist/instantsearch.min.js" defer></script><script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: 'ca-pub-1212350841814319',
+  enable_page_level_ads: 'true'
+});</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: {"appId":"6R0YB5PQXZ","apiKey":"6b0c8b2c58e4077f07834253aee1c689","indexName":"blog","hits":{"per_page":6},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 刘向洋","link":"链接: ","source":"来源: LXY`S BLOG","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2019-12-03 10:11:17'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><style type="text/css">#toggle-sidebar {left: 100px}</style><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="LXY`S BLOG" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="iron-container iron-circle"><div class="iron-box1 iron-circle iron-center"></div><div class="iron-box2 iron-circle iron-center"></div><div class="iron-box3 iron-circle iron-center"></div><div class="iron-box4 iron-circle iron-center"></div><div class="iron-box5 iron-circle iron-center"></div><div class="iron-box6 iron-circle"><div class="iron-coil" style="--i: 0"></div><div class="iron-coil" style="--i: 1"></div><div class="iron-coil" style="--i: 2"></div><div class="iron-coil" style="--i: 3"></div><div class="iron-coil" style="--i: 4"></div><div class="iron-coil" style="--i: 5"></div><div class="iron-coil" style="--i: 6"></div><div class="iron-coil" style="--i: 7"></div></div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" data-lazy-src="https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/cloudimg/img-2/微信图片_20200408193536.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">348</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">90</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">34</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/message/"><i class="fa-fw fa fa-comment-dots"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/map/"><i class="fa-fw fa fa-globe"></i><span> 世界地图</span></a></div><div class="menus_item"><a class="site-page" href="/artitalk/"><i class="fa-fw fa fa-puzzle-piece"></i><span> 碎碎念</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/life/"><i class="fa-fw fa fa-edit"></i><span> 每日一言</span></a></div><div class="menus_item"><a class="site-page" href="/xiangcepage/"><i class="fa-fw fa fa-image"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-address-card"></i><span> 关于我</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/about/"><i class="fa-fw fa fa-graduation-cap"></i><span> 简历</span></a></li><li><a class="site-page" href="/show/"><i class="fa-fw fa fa-street-view"></i><span> 个人爱好</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-paperclip"></i><span> 照片集</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/lol/"><i class="fa-fw fa fa-flag"></i><span> 照片墙</span></a></li><li><a class="site-page" href="/haizeiwang/"><i class="fa-fw fa fa-ship"></i><span> 海贼王</span></a></li><li><a class="site-page" href="/3d-gallery/"><i class="fa-fw fa fa-university"></i><span> 3D照片屋</span></a></li><li><a class="site-page" href="/video/"><i class="fa-fw fa fas fa-video"></i><span> 视频集</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-archive"></i><span> 小工具</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/time/"><i class="fa-fw fa fa-clock"></i><span> 小时钟</span></a></li><li><a class="site-page" href="/E-book/"><i class="fa-fw fa fa-book"></i><span> 电子书</span></a></li><li><a class="site-page" href="/black/"><i class="fa-fw fa fa-sticky-note"></i><span> 小黑板</span></a></li><li><a class="site-page" href="/draw/"><i class="fa-fw fa fa-paint-brush"></i><span> 小画板</span></a></li><li><a class="site-page" href="/cal/"><i class="fa-fw fa fa-band-aid"></i><span> 计算器</span></a></li><li><a class="site-page" href="/3d/"><i class="fa-fw fa fa-baby-carriage"></i><span> 3D抽奖</span></a></li><li><a class="site-page" href="/night/"><i class="fa-fw fa fa-star"></i><span> 星空弹幕</span></a></li><li><a class="site-page" href="/houseloan/"><i class="fa-fw fa fa-male"></i><span> 房贷计算器</span></a></li><li><a class="site-page" href="/font/"><i class="fa-fw fa fa fa-broom"></i><span> 闪电绘制文字</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-gamepad"></i><span> 小游戏</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/game2/"><i class="fa-fw fa fa-gamepad"></i><span> 打字游戏</span></a></li><li><a class="site-page" href="/game1/"><i class="fa-fw fa fa-gamepad"></i><span> 星球防御</span></a></li><li><a class="site-page" href="/game3/"><i class="fa-fw fa fa-gamepad"></i><span> 中国象棋</span></a></li><li><a class="site-page" href="/game4/"><i class="fa-fw fa fa-gamepad"></i><span> 神奇画笔</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li><li><a class="site-page" href="/books/"><i class="fa-fw fa fa-book"></i><span> 图书</span></a></li><li><a class="site-page" href="/games/"><i class="fa-fw fa fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page" href="/sansi/"><i class="fa-fw fa fa-building"></i><span> 公司</span></a></li><li><a class="site-page" href="/school/"><i class="fa-fw fa fa-graduation-cap"></i><span> 母校</span></a></li><li><a class="site-page" href="/houtai/"><i class="fa-fw fa fa-wrench"></i><span> 后台</span></a></li><li><a class="site-page" href="/tiangou/"><i class="fa-fw fas fa-atlas"></i><span> 舔狗日记</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/cloudimg/img/20191129084320.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">LXY`S BLOG</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/message/"><i class="fa-fw fa fa-comment-dots"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/map/"><i class="fa-fw fa fa-globe"></i><span> 世界地图</span></a></div><div class="menus_item"><a class="site-page" href="/artitalk/"><i class="fa-fw fa fa-puzzle-piece"></i><span> 碎碎念</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/life/"><i class="fa-fw fa fa-edit"></i><span> 每日一言</span></a></div><div class="menus_item"><a class="site-page" href="/xiangcepage/"><i class="fa-fw fa fa-image"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-address-card"></i><span> 关于我</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/about/"><i class="fa-fw fa fa-graduation-cap"></i><span> 简历</span></a></li><li><a class="site-page" href="/show/"><i class="fa-fw fa fa-street-view"></i><span> 个人爱好</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-paperclip"></i><span> 照片集</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/lol/"><i class="fa-fw fa fa-flag"></i><span> 照片墙</span></a></li><li><a class="site-page" href="/haizeiwang/"><i class="fa-fw fa fa-ship"></i><span> 海贼王</span></a></li><li><a class="site-page" href="/3d-gallery/"><i class="fa-fw fa fa-university"></i><span> 3D照片屋</span></a></li><li><a class="site-page" href="/video/"><i class="fa-fw fa fas fa-video"></i><span> 视频集</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-archive"></i><span> 小工具</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/time/"><i class="fa-fw fa fa-clock"></i><span> 小时钟</span></a></li><li><a class="site-page" href="/E-book/"><i class="fa-fw fa fa-book"></i><span> 电子书</span></a></li><li><a class="site-page" href="/black/"><i class="fa-fw fa fa-sticky-note"></i><span> 小黑板</span></a></li><li><a class="site-page" href="/draw/"><i class="fa-fw fa fa-paint-brush"></i><span> 小画板</span></a></li><li><a class="site-page" href="/cal/"><i class="fa-fw fa fa-band-aid"></i><span> 计算器</span></a></li><li><a class="site-page" href="/3d/"><i class="fa-fw fa fa-baby-carriage"></i><span> 3D抽奖</span></a></li><li><a class="site-page" href="/night/"><i class="fa-fw fa fa-star"></i><span> 星空弹幕</span></a></li><li><a class="site-page" href="/houseloan/"><i class="fa-fw fa fa-male"></i><span> 房贷计算器</span></a></li><li><a class="site-page" href="/font/"><i class="fa-fw fa fa fa-broom"></i><span> 闪电绘制文字</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-gamepad"></i><span> 小游戏</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/game2/"><i class="fa-fw fa fa-gamepad"></i><span> 打字游戏</span></a></li><li><a class="site-page" href="/game1/"><i class="fa-fw fa fa-gamepad"></i><span> 星球防御</span></a></li><li><a class="site-page" href="/game3/"><i class="fa-fw fa fa-gamepad"></i><span> 中国象棋</span></a></li><li><a class="site-page" href="/game4/"><i class="fa-fw fa fa-gamepad"></i><span> 神奇画笔</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li><li><a class="site-page" href="/books/"><i class="fa-fw fa fa-book"></i><span> 图书</span></a></li><li><a class="site-page" href="/games/"><i class="fa-fw fa fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page" href="/sansi/"><i class="fa-fw fa fa-building"></i><span> 公司</span></a></li><li><a class="site-page" href="/school/"><i class="fa-fw fa fa-graduation-cap"></i><span> 母校</span></a></li><li><a class="site-page" href="/houtai/"><i class="fa-fw fa fa-wrench"></i><span> 后台</span></a></li><li><a class="site-page" href="/tiangou/"><i class="fa-fw fas fa-atlas"></i><span> 舔狗日记</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">ELK日志可视化快速搭建，亲测完善可用<a class="post-edit-link" href="null_posts/00152.md" title="编辑" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-04-10T07:59:52.000Z" title="发表于 2019-04-10 15:59:52">2019-04-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2019-12-03T02:11:17.541Z" title="更新于 2019-12-03 10:11:17">2019-12-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/ELK/">ELK</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>10分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p> 在工作中随着业务量的增大和项目的增多，日志量随之增大，我们需要对日志进行集中化管理，将所有机器上的日志信息收集、汇总到一起。完整的日志数据具有非常重要的作用：<br> 1）信息查找:通过检索日志信息，定位相应的bug，找出解决方案。<br> 2）服务诊断:通过对日志信息进行统计、分析，了解服务器的负荷和服务运行状态，找出耗时请求进行优化等等。<br> 3）数据分析:如果是格式化的log，可以做进一步的数据分析，统计、聚合出有意义的信息，比如根据请求中的商品id，找出TOP10用户感兴趣商品。<br> 开源实时日志分析ELK平台能够完美的解决我们上述的问题，ELK由ElasticSearch、Logstash和Kiabana三个开源工具组成：</p>
+<p> 1）ElasticSearch是一个基于Lucene的开源分布式搜索服务器。它的特点有：分布式，零配置，自动发现，索引自动分片，索引副本机制，restful风格接口，多数据源，自动搜索负载等。它提供了一个分布式多用户能力的全文搜索引擎，基于RESTful web接口。Elasticsearch是用Java开发的，并作为Apache许可条款下的开放源码发布，是第二流行的企业搜索引擎。设计用于云计算中，能够达到实时搜索，稳定，可靠，快速，安装使用方便。在elasticsearch中，所有节点的数据是均等的。</p>
+<p> 2）Logstash是一个完全开源的工具，它可以对你的日志进行收集、过滤、分析，支持大量的数据获取方法，并将其存储供以后使用（如搜索）。说到搜索，logstash带有一个web界面，搜索和展示所有日志。一般工作方式为c/s架构，client端安装在需要收集日志的主机上，server端负责将收到的各节点日志进行过滤、修改等操作在一并发往elasticsearch上去。</p>
+<p> 3）Kibana 是一个基于浏览器页面的Elasticsearch前端展示工具，也是一个开源和免费的工具，Kibana可以为 Logstash 和 ElasticSearch 提供的日志分析友好的 Web 界面，可以帮助您汇总、分析和搜索重要数据日志.</p>
+<p> 4)beats中的filebeat可以将多台机器的日志数据进行采集发送至logstash或elasticsearch，然后通过kiabana进行页面可视化展示。</p>
+<p> (注：安装以上服务需要先安装JAVA，并配置好环境变量)<br> 安装篇<br> 系统环境：CentOS Linux release 7.4.1708 (Core)<br> 软件下载：<a target="_blank" rel="noopener" href="https://www.elastic.co/downloads">https://www.elastic.co/downloads</a> (所需的软件都可以在该网站下载，所有软件版本都要保持一致)<br> ，以下提供下载地址：</p>
+<p> elasticsearch：<a target="_blank" rel="noopener" href="https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.4.1.tar.gz">https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.4.1.tar.gz</a></p>
+<p> logstash:<a target="_blank" rel="noopener" href="https://artifacts.elastic.co/downloads/logstash/logstash-5.4.1.tar.gz">https://artifacts.elastic.co/downloads/logstash/logstash-5.4.1.tar.gz</a></p>
+<p> kibana:<a target="_blank" rel="noopener" href="https://artifacts.elastic.co/downloads/kibana/kibana-5.4.1-linux-x86_64.tar.gz">https://artifacts.elastic.co/downloads/kibana/kibana-5.4.1-linux-x86_64.tar.gz</a><br> filebeat：<a target="_blank" rel="noopener" href="https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-5.4.1-linux-x86_64.tar.gz">https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-5.4.1-linux-x86_64.tar.gz</a></p>
+<p> 1.Elasticsearch 源码包的安装与配置：</p>
+<p> 解压elasticsearch,我这里用的是elasticsearch-6.5.4：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar –zvxf elasticsearch-6.5.4.tar.gz</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> 将解压后的elasticsearch-6.5.4放到所需要的目录(自定义我这里放到了/usr/local/)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mv elasticsearch-6.5.4  &#x2F;usr&#x2F;loca	l&#x2F; elasticsearch-6.5.4</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> 到目录下对elasticsearch文件进行配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;usr&#x2F;local&#x2F; elasticsearch-6.5.4</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ll</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> <img src="https://img-blog.csdnimg.cn/20190410162137189.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpdXhpYW5neWFuZ18=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim config&#x2F;elasticsearch.yml</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> 对elasticsearch.yml文件内以下项进行修改：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cluster.name: elk                            # 组名（同一个组，组名必须一致）</span><br><span class="line">node.name: elk-node1                      # 节点名称，建议和主机名一致</span><br><span class="line">path.data: &#x2F;data&#x2F;es-data                   # 数据存放的路径(日志路径可以自定义)</span><br><span class="line">path.logs: &#x2F;var&#x2F;log&#x2F;elasticsearch&#x2F;         # 日志存放的路径</span><br><span class="line">network.host: 0.0.0.0                       # 网络设置</span><br><span class="line">http.port: 9200                               # 端口</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">关于elasticsearch 的启动需要创建一个普通组和用户进行启动，否则启动会报错。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">groupadd elklog</span><br><span class="line">adduser elk</span><br><span class="line">useradd -g test phpq &#x2F;&#x2F;新建phpq用户并增加到test工作组</span><br><span class="line">passwd elklog</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">对&#x2F;usr&#x2F;local&#x2F;elasticsearch-6.5.4进行赋权;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chown –R elklog.elklog  &#x2F;usr&#x2F;local&#x2F;elasticsearch-6.5.4</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> 用户名 密码 目录<br> 切换用户：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">su elklog</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> 启动 elasticsearch 服务，在/usr/local/elasticsearch-6.5.4目录下执行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;bin&#x2F;elasticsearch -d  后台执行</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> 查看相关端口看是否启动：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">netstat-tunpl</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> 默认为9200和9300端口<br> <img src="https://img-blog.csdnimg.cn/20190410162157196.png" alt="在这里插入图片描述"></p>
+<p> 也可以通过浏览器进行验证：<br> <a target="_blank" rel="noopener" href="http://ip:9200/">http://IP:9200</a> 出现如下页面表示安装成功启动成功。<br> <img src="https://img-blog.csdnimg.cn/20190410162205255.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpdXhpYW5neWFuZ18=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p> 2.为elasticsearch安装heard插件，安装之前要先安装nodjs插件：<br> elasticsearch-head 是用于监控 Elasticsearch 状态的客户端插件，包括数据可视化、执行增删改查操作等</p>
+<p> 下载heard:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone git:&#x2F;&#x2F;github.com&#x2F;mobz&#x2F;elasticsearch-head.git</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> 等待下载完成后执行以下命令安装grunt-cli ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g grunt-cli   </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> 执行以下命令安装grunt,要在head下载完成后进入到head的文件下执行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd elasticsearch-head  #进入到head目录</span><br><span class="line">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br><span class="line">速度较慢或者安装失败，所以使用国内镜像   </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install grunt --save  #安装grunt</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> 安装npm依赖包：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># npm install      必须要执行，否则会缺包</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> 所有包安装完成后对heard的Gruntfile.js配置文件进行修改：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim Gruntfile.js</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> 找到以下信息，增加hostname项：<br> 更改前：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">connect: &#123;</span><br><span class="line">                    server: &#123;</span><br><span class="line">                            options: &#123;</span><br><span class="line">                                    port: 9100,</span><br><span class="line">                                    base: &#39;.&#39;,</span><br><span class="line">                                    keepalive: true</span><br><span class="line">                            &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">   更改后：</span><br><span class="line"></span><br><span class="line">  connect: &#123;</span><br><span class="line">                    server: &#123;</span><br><span class="line">                            options: &#123;</span><br><span class="line">                                    hostname:’0.0.0.0’,</span><br><span class="line">                                    port: 9100,</span><br><span class="line">                                    base: &#39;.&#39;,</span><br><span class="line">                                    keepalive: true</span><br><span class="line">                            &#125;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> 以上都更改完成后需要添加以下两行到/usr/local/elasticsearch-6.5.4/config/ elasticsearch.yml下面实现可以正常访问：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">http.cors.enabled: true</span><br><span class="line">http.cors.allow-origin: &quot;*&quot;</span><br><span class="line">备注后面的值别忘了有空格哦</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> 启动heard插件，要在该插件目录下执行以下命令进行启动：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">grunt server</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> 执行后出现以下输出说明启动成功：<br> Running “connect:server” (connect) task<br> Waiting forever…<br> Started connect web server on <a target="_blank" rel="noopener" href="http://localhost:9100/">http://localhost:9100</a><br> 可通过浏览器进行访问测试一下：<br> <img src="https://img-blog.csdnimg.cn/20190410162230604.png" alt="在这里插入图片描述"><br> 3.安装logstash,也是从<a target="_blank" rel="noopener" href="https://www.elastic.co/downloads">https://www.elastic.co/downloads</a> 下载的源码包(所需的软件都可以在该网站下载，所有软件版本都要保持一致)<br> 解压</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar -zvxf  logstash-6.5.4.tar.gz</span><br><span class="line">mv logstash-6.5.4 &#x2F;usr&#x2F;local&#x2F; logstash-6.5.4  #所放目当可自定</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> 1.编辑配置文件，可自行在logstash/conf下创建一个自己需要的.conf文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">touch logstash.conf</span><br><span class="line">vim logstash.conf</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> 我的配置内容如下：<br> <img src="https://img-blog.csdnimg.cn/20190410161525840.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpdXhpYW5neWFuZ18=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br> 也可用下面这个(纯净版)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">input &#123;</span><br><span class="line">     file &#123;</span><br><span class="line">        type &#x3D;&gt; &quot;log&quot;</span><br><span class="line">        path &#x3D;&gt; &quot;&#x2F;logs&#x2F;*.log&quot;</span><br><span class="line">        start_position &#x3D;&gt; &quot;beginning&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">output &#123;</span><br><span class="line">  stdout &#123;</span><br><span class="line">   codec &#x3D;&gt; rubydebug &#123; &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  elasticsearch &#123;</span><br><span class="line">    hosts &#x3D;&gt; &quot;127.0.0.1&quot;</span><br><span class="line">    index &#x3D;&gt; &quot;log-%&#123;+YYYY.MM.dd&#125;&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> 然后做好input ，filter，output三大块， 其中input是吸取logs文件下的所有log后缀的日志文件，filter是一个过滤函数，这里不用配置，output配置了导入到<br> hosts为127.0.0.1:9200的elasticsearch中，每天一个索引。<br> 3.配置完成后启动logstash:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;bin&#x2F;logstash -e  config&#x2F;XXX.conf</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> 关于logstash的配置，下面做一下介绍：<br> (1)Logstash事件处理有三个阶段：inputs → filters → outputs。是一个接收，处理和转发日志的工具，支持处理所有可以抛出来的日志类型。<br> (2)Input：输入数据到logstash，file是从文件系统中读取，redis是从缓存中读取，beats是从filebeat中读取。<br> (3)Filters：数据中间处理，对数据进行操作。<br> (4)outputs是logstash处理管道的最末端组件。一个event可以在处理过程中经过多重输出，elasticsearch：可以高效的保存数据，并且能够方便和简单的进行查询。file：将event数据保存到文件中。<br> graphite：将event数据发送到图形化组件中，一个很流行的开源存储图形化展示的组件。<br> codecs 是基于数据流的过滤器，它可以作为input，output的一部分配置，Codecs可以帮助你轻松的分割发送过来已经被序列化的数据。</p>
+<p> 4.安装kibana , 从<a target="_blank" rel="noopener" href="https://www.elastic.co/downloads">https://www.elastic.co/downloads</a> 下载的源码包(所需的软件都可以在该网站下载，所有软件版本都要保持一致)<br> 解压</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar –zvxf  kibana-6.5.4.tar.gz</span><br><span class="line">mv  kibana-6.5.4   &#x2F;usr&#x2F;local&#x2F;kibana</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> 修改配置文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim &#x2F;usr&#x2F;local&#x2F;kibana&#x2F;config&#x2F;kibana.yml</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">更改如下：</span><br><span class="line">   server.port: 5601  #放开端口</span><br><span class="line">   </span><br><span class="line">server.host: &quot;0.0.0.0&quot;  </span><br><span class="line">   </span><br><span class="line">   server.name: &quot;kabba-server&quot;  #kibana服务名</span><br><span class="line">    </span><br><span class="line">    elasticsearch.url: http:&#x2F;&#x2F;IP:9200  # elasticsearch服务的IP地址   </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> 配置完成后启动kibana:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;bin&#x2F;kibana</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> 启动后可以在浏览器进行一下测试访问：<br> <img src="https://img-blog.csdnimg.cn/20190410162247119.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpdXhpYW5neWFuZ18=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p> 我的kibana因为之前在logstash里做过日志导入到elasticsearch里，所有已经有LOG分析的数据进行展现了。</p>
+<p> 5.filebeat的安装配置：<br> 从<a target="_blank" rel="noopener" href="https://www.elastic.co/downloads">https://www.elastic.co/downloads</a> 下载的源码包(所需的软件都可以在该网站下载，所有软件版本都要保持一致)<br> 安装很简单，就是将filebeat的源码包解压放到你指定的目录下就行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar –zvxf filebeat-6.5.4.tar.gz</span><br><span class="line">mv filebeat-6.5.4  &#x2F;usr&#x2F;local&#x2F;filebeat-6.5.4</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">配置filebeat：</span><br><span class="line">   # vim  filebeat.yml</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>type: log #日志的默认type<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">      enabled: true  </span><br><span class="line">  paths:</span><br><span class="line">     - &#x2F;tem&#x2F;logs&#x2F;*&#x2F;nod_*.log  #配置所要获取的日志路径</span><br><span class="line">fields:</span><br><span class="line">      service: nod_log        #定义日志的名称</span><br><span class="line">  tail_files: true</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p> output.logstash:<br>     hosts: [“1.1.1.1:5044”]   #将filebeat获取到的日志转到logstash处理   </p>
+<pre><code>配置完成后启动filebeat:
+# nohup ./filebeat -e -c filebeat.yml &gt; /dev/null 2&gt;&amp;1 &amp;   #后端启动 
+
+启动后可以到logstash上看出正在对日志处理：
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">      ![在这里插入图片描述](https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20190410162316905.png?x-oss-process&#x3D;image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpdXhpYW5neWFuZ18&#x3D;,size_16,color_FFFFFF,t_70)  </span><br><span class="line">同时通过kibana也能看到filebeat通过logstash处理后的日志：  </span><br><span class="line">![在这里插入图片描述](https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20190410162326494.png?x-oss-process&#x3D;image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpdXhpYW5neWFuZ18&#x3D;,size_16,color_FFFFFF,t_70)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</code></pre>
+<p>用的时候最好用后台启动方式<br>nohup ./kibana &amp;exit<br>nohup ./logstash -f spring-boot.conf &amp;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<p>filebeat文件的配置样例：</p>
+<p>  filebeat.prospectors:</p>
+<ul>
+<li>type: log<br>enabled: true<br>paths:<ul>
+<li>/tmep/logs/<em>/</em>.log<br>fields:<br>service: nod_log<br>tail_files: true<br>…………..<br>output.logstash:<br>hosts: [“139.224.151.76:5044”]</li>
+</ul>
+</li>
+</ul>
+<p>Logstash文件配置样例：</p>
+<p> input {<br>       beats  {<br>              port =&gt; 5044<br>      }<br>}</p>
+<p>filter {<br>        if [fields][service]  == ‘nod_log’  {<br>               grok {<br>                    match =&gt;  [“message”,”%{DATA:logtime}|%{DATA:std}|%{NUMBER:loss}|%{NUMBER:delay}$”]<br>                }</p>
+<pre><code>           date &#123;
+               match =&gt; [&quot;logtime&quot;, &quot;yyyy-MM-dd HH:mm:ss&quot;]
+               target =&gt; &quot;@timestamp&quot;
+               remove_field =&gt; [&quot;logtime&quot;,&quot;message&quot;,&quot;[beat][version]&quot;,&quot;[beat][name]&quot;,&quot;offset&quot;,&quot;prospector&quot;,&quot;tags&quot;,&quot;source&quot;]
+            &#125;
+            mutate &#123;
+              convert =&gt; [
+                  &quot;loss&quot; , &quot;float&quot;,
+                  &quot;delay&quot; , &quot;integer&quot; ]
+            &#125;
+</code></pre>
+<p>}<br>   }</p>
+<p> output {<br>     if [fields][service] == “pping_log” {<br>            if “_grokparsefailure” not in [tags] {<br>                   elasticsearch {<br>                        hosts  =&gt; [“139.224.151.76:9200”]<br>                        index =&gt; “logstash-ppinglog-%{+YYYY.MM.dd}”<br>                     }<br>              }<br>      }</p>
+<p> }</p>
+<p>```</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">刘向洋</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://liuxiangyang.space/2019/04/10/00152/">https://liuxiangyang.space/2019/04/10/00152/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://liuxiangyang.space" target="_blank">LXY`S BLOG</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/CSDN%E8%BF%81%E7%A7%BB/">CSDN迁移</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/cloudimg/img/20191129084320.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/cloudimg/img/f72ec36ac580f0c27f664799ae90a69.png" target="_blank"><img class="post-qr-code-img" data-lazy-src="https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/cloudimg/img/f72ec36ac580f0c27f664799ae90a69.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/cloudimg/img/18b58b70df64c9aed8fdc2d39692018.png" target="_blank"><img class="post-qr-code-img" data-lazy-src="https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/cloudimg/img/18b58b70df64c9aed8fdc2d39692018.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><div class="ads-wrap"><ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-ad-client="ca-pub-1212350841814319" data-ad-slot="1265717074"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2019/04/10/00211/"><img class="prev-cover" data-lazy-src="https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/cloudimg/img-2/20200125173556.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Linux（CentOS）安装Node.JS和npm的两种方式（yum安装和源码安装）亲测可用</div></div></a></div><div class="next-post pull-right"><a href="/2019/04/11/00149/"><img class="next-cover" data-lazy-src="https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/cloudimg/img/20191129084320.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">elastic search报错——“failed to obtain node locks”</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2019/06/25/00162/" title="Linux之sync命令的作用"><img class="cover" data-lazy-src="https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/cloudimg/img/20191126132049.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-06-25</div><div class="title">Linux之sync命令的作用</div></div></a></div><div><a href="/2019/08/21/00051/" title="zabbix自动发现linux服务器占用内存最大top10进程并监控资源"><img class="cover" data-lazy-src="https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/cloudimg/img/u=1924097369,3612158264&fm=26&gp=0.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-08-21</div><div class="title">zabbix自动发现linux服务器占用内存最大top10进程并监控资源</div></div></a></div><div><a href="/2020/01/27/00107/" title="ELK+Filebeat集中式日志解决方案（centos7)阐述"><img class="cover" data-lazy-src="https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/cloudimg/img/20191128132019.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-01-27</div><div class="title">ELK+Filebeat集中式日志解决方案（centos7)阐述</div></div></a></div><div><a href="/2019/04/12/00108/" title="ELK后台执行的小技巧"><img class="cover" data-lazy-src="https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/cloudimg/img/0b7b02087bf40ad18443ca9a512c11dfa9ecce20.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-04-12</div><div class="title">ELK后台执行的小技巧</div></div></a></div><div><a href="/2018/12/27/00113/" title="linux服务器数据库备份"><img class="cover" data-lazy-src="https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/cloudimg/img/20191130141358.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2018-12-27</div><div class="title">linux服务器数据库备份</div></div></a></div><div><a href="/2019/09/03/00117/" title="解决方法之-VMware虚拟机出现“需要整合虚拟机磁盘”"><img class="cover" data-lazy-src="https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/cloudimg/img/vmware.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-09-03</div><div class="title">解决方法之-VMware虚拟机出现“需要整合虚拟机磁盘”</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/cloudimg/img-2/微信图片_20200408193536.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">刘向洋</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">348</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">90</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">34</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://work.liuxiangyang.space/"><i class="fab fa-github"></i><span>工作页</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/LiuXiangYang-Git/LiuXiangYang-Git.github.io" target="_blank" title=""><i class="fab fa-github"></i></a><a class="social-icon" href="/love" target="_blank" title=""><i class="fas fa-heart"></i></a><a class="social-icon" href="/love2" target="_blank" title=""><i class="fa fa-birthday-cake"></i></a><a class="social-icon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=1330561079&amp;site=qq&amp;menu=yes" target="_blank" title=""><i class="fab fa-qq"></i></a><a class="social-icon" href="https://blog.csdn.net/liuxiangyang_" target="_blank" title=""><i class="fa fa-copyright"></i></a><a class="social-icon" href="/snow" target="_blank" title=""><i class="fas fa-snowflake"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title=""><i class="fa fa-rss"></i></a><a class="social-icon" href="mailto:liuxiangyangsansi@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">你眼中的星海灿烂是我不曾见过的世外桃源！</div></div><div class="sticky_layout"><div class="card-widget card-clock"><div id="clock"><img v-if="clockshow == &quot;false&quot;" alt="" src="/assets/weather/loading.gif" height="120px" width="100%"/><table class="clock" v-if="clockshow"><tbody><tr><td class="clockdate">{{date}}</td><td class="weatherimg"><img id="weatherimg" :src="weatherimg" alt=""/></td><td class="temperature">{{temperature}}</td><td class="humidityimg"><img id="humidityimg" :src="humidityimg" alt=""/></td><td class="humidity">{{humidity}}</td></tr><tr class="time"><td colspan="5">{{time}}</td></tr><tr><td class="usaqi" colspan="1"><span>{{ip}}</span></td><td class="city" colspan="2">{{city}}</td><td class="daylight" colspan="2">{{daylight}}</td></tr></tbody></table></div></div><script defer="defer" data-pjax="data-pjax" src="/js/card_clock.js"></script><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/04/09/00379/" title="Jenkins之手动安装构建工具Maven"><img data-lazy-src="https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/picture/img-2/20210409130545.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Jenkins之手动安装构建工具Maven"/></a><div class="content"><a class="title" href="/2021/04/09/00379/" title="Jenkins之手动安装构建工具Maven">Jenkins之手动安装构建工具Maven</a><time datetime="2021-04-09T08:57:12.000Z" title="发表于 2021-04-09 16:57:12">2021-04-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/04/09/00378/" title="如何在Linux服务器上查找JDK安装路径"><img data-lazy-src="https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/cloudimg/img/adadadav.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="如何在Linux服务器上查找JDK安装路径"/></a><div class="content"><a class="title" href="/2021/04/09/00378/" title="如何在Linux服务器上查找JDK安装路径">如何在Linux服务器上查找JDK安装路径</a><time datetime="2021-04-09T08:57:12.000Z" title="发表于 2021-04-09 16:57:12">2021-04-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/04/09/00375/" title="Jenkins之手动安装构建工具Ant"><img data-lazy-src="https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/picture/img-2/20210409130109.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Jenkins之手动安装构建工具Ant"/></a><div class="content"><a class="title" href="/2021/04/09/00375/" title="Jenkins之手动安装构建工具Ant">Jenkins之手动安装构建工具Ant</a><time datetime="2021-04-09T08:57:12.000Z" title="发表于 2021-04-09 16:57:12">2021-04-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/04/07/00377/" title="个人博客如何加入谷歌广告"><img data-lazy-src="https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/picture/img-2/20210407161018.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="个人博客如何加入谷歌广告"/></a><div class="content"><a class="title" href="/2021/04/07/00377/" title="个人博客如何加入谷歌广告">个人博客如何加入谷歌广告</a><time datetime="2021-04-07T09:57:15.000Z" title="发表于 2021-04-07 17:57:15">2021-04-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/04/07/00376/" title="Ceph架构简介及使用"><img data-lazy-src="https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/picture/img-2/20210407155124.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Ceph架构简介及使用"/></a><div class="content"><a class="title" href="/2021/04/07/00376/" title="Ceph架构简介及使用">Ceph架构简介及使用</a><time datetime="2021-04-07T09:57:13.000Z" title="发表于 2021-04-07 17:57:13">2021-04-07</time></div></div></div></div><div class="card-widget ads-wrap"><ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-ad-client="ca-pub-1212350841814319" data-ad-slot="1265717074"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div></div></div></main><footer id="footer" style="background-image: url('https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/cloudimg/img/20191129084320.png')"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2021 By 刘向洋</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a href="https://liuxiangyang.space/">blog</a>!</div><div id="workboard"></div><script async="async" src="/js/runtime.js"></script></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="chat_btn" type="button" title="rightside.chat_btn"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="algolia-search"><div class="search-dialog"><div class="search-dialog__title" id="algolia-search-title">Algolia</div><div id="algolia-input-panel"><div id="algolia-search-input"></div></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-stats"></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="/js/search/algolia.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    let initData = {
+      el: '#vcomment',
+      appId: 'X7SXf1j7gKnfRPiMfcWveBya-gzGzoHsz',
+      appKey: '4xxDXRqYDcaPFCv6jDJxlBp0',
+      placeholder: '请留下你的足迹，欢迎留言！',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-cn',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: {"tv_doge":"6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png","tv_亲亲":"a8111ad55953ef5e3be3327ef94eb4a39d535d06.png","tv_偷笑":"bb690d4107620f1c15cff29509db529a73aee261.png","tv_再见":"180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png","tv_冷漠":"b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png","tv_发怒":"34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png","tv_发财":"34db290afd2963723c6eb3c4560667db7253a21a.png","tv_可爱":"9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png","tv_吐血":"09dd16a7aa59b77baa1155d47484409624470c77.png","tv_呆":"fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png","tv_呕吐":"9f996894a39e282ccf5e66856af49483f81870f3.png","tv_困":"241ee304e44c0af029adceb294399391e4737ef2.png","tv_坏笑":"1f0b87f731a671079842116e0991c91c2c88645a.png","tv_大佬":"093c1e2c490161aca397afc45573c877cdead616.png","tv_大哭":"23269aeb35f99daee28dda129676f6e9ea87934f.png","tv_委屈":"d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png","tv_害羞":"a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png","tv_尴尬":"7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png","tv_微笑":"70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png","tv_思考":"90cf159733e558137ed20aa04d09964436f618a1.png","tv_惊吓":"0d15c7e2ee58e935adc6a7193ee042388adc22af.png"},
+      enableQQ: false,
+      path: window.location.pathname,
+      master: 'c9a735260d42f6354cf460ecb17bb8c4,06a3a244f047788db8641d58b08031f0'.split(','),
+      friends: ''.split(','),
+      tagMeta: '博主,小伙伴,访客'.split(',')
+    }
+
+    if (true) { 
+      initData.requiredFields= ('nick,mail'.split(','))
+    }
+    
+    if (false) {
+      const otherData = false
+      initData = Object.assign(initData, otherData)
+    }
+    
+    const valine = new Valine(initData)
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script defer src="/live2d-widget/autoload.js"></script><div class="aplayer no-destroy" data-id="3393993217" data-server="tencent" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="false" data-text="富强,民主,文明,和谐,自由,平等,公正,法治,爱国,敬业,诚信,友善" data-fontsize="15px" data-random="false" async="async"></script><script src="//code.tidio.co/iyvkqo3auxbyyqlpc6lho7vthd1wscwt.js" async="async"></script><script>function onTidioChatApiReady() {
+  window.tidioChatApi.hide();
+  window.tidioChatApi.on("close", function() {
+    window.tidioChatApi.hide();
+  });
+}
+if (window.tidioChatApi) {
+  window.tidioChatApi.on("ready", onTidioChatApiReady);
+} else {
+  document.addEventListener("tidioChat-ready", onTidioChatApiReady);
+}
+
+var chatBtnFn = () => {
+  document.getElementById("chat_btn").addEventListener("click", function(){
+    window.tidioChatApi.show();
+    window.tidioChatApi.open();
+  });
+}
+chatBtnFn()
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

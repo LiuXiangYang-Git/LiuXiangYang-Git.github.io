@@ -1,0 +1,238 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>云计算术语扫盲 | LXY`S BLOG</title><meta name="author" content="刘向洋"><meta name="copyright" content="刘向洋"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="资源在云计算中，资源和服务本质上是一样的，服务可能会更范一些，资源一般特指CPU(计算)、Mem(存储)和IO(网络)三大资源，云计算的做法就是将闲置的这些资源充分利用起来,租给用户使用。我觉得这也有点共享经济的意思，大家把自己身边闲置的资源拿出来,分享给别人使用，我为人人，人人为我。只不过云计算这种资源比较奢侈，一般人还提供不起，只有那些大企业，在满足自己业务需求之余，还空闲着很多资源，所以与其">
+<meta property="og:type" content="article">
+<meta property="og:title" content="云计算术语扫盲">
+<meta property="og:url" content="https://liuxiangyang.space/2020/09/27/00346/index.html">
+<meta property="og:site_name" content="LXY&#96;S BLOG">
+<meta property="og:description" content="资源在云计算中，资源和服务本质上是一样的，服务可能会更范一些，资源一般特指CPU(计算)、Mem(存储)和IO(网络)三大资源，云计算的做法就是将闲置的这些资源充分利用起来,租给用户使用。我觉得这也有点共享经济的意思，大家把自己身边闲置的资源拿出来,分享给别人使用，我为人人，人人为我。只不过云计算这种资源比较奢侈，一般人还提供不起，只有那些大企业，在满足自己业务需求之余，还空闲着很多资源，所以与其">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/picture/img-2/20200927145549.png">
+<meta property="article:published_time" content="2020-09-27T06:57:13.000Z">
+<meta property="article:modified_time" content="2020-10-23T07:19:37.235Z">
+<meta property="article:author" content="刘向洋">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/picture/img-2/20200927145549.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://liuxiangyang.space/2020/09/27/00346/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5/dist/instantsearch.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5/dist/instantsearch.min.js" defer></script><script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: 'ca-pub-1212350841814319',
+  enable_page_level_ads: 'true'
+});</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: {"appId":"6R0YB5PQXZ","apiKey":"6b0c8b2c58e4077f07834253aee1c689","indexName":"blog","hits":{"per_page":6},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 刘向洋","link":"链接: ","source":"来源: LXY`S BLOG","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2020-10-23 15:19:37'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><style type="text/css">#toggle-sidebar {left: 100px}</style><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="LXY`S BLOG" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="iron-container iron-circle"><div class="iron-box1 iron-circle iron-center"></div><div class="iron-box2 iron-circle iron-center"></div><div class="iron-box3 iron-circle iron-center"></div><div class="iron-box4 iron-circle iron-center"></div><div class="iron-box5 iron-circle iron-center"></div><div class="iron-box6 iron-circle"><div class="iron-coil" style="--i: 0"></div><div class="iron-coil" style="--i: 1"></div><div class="iron-coil" style="--i: 2"></div><div class="iron-coil" style="--i: 3"></div><div class="iron-coil" style="--i: 4"></div><div class="iron-coil" style="--i: 5"></div><div class="iron-coil" style="--i: 6"></div><div class="iron-coil" style="--i: 7"></div></div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" data-lazy-src="https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/cloudimg/img-2/微信图片_20200408193536.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">348</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">90</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">34</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/message/"><i class="fa-fw fa fa-comment-dots"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/map/"><i class="fa-fw fa fa-globe"></i><span> 世界地图</span></a></div><div class="menus_item"><a class="site-page" href="/artitalk/"><i class="fa-fw fa fa-puzzle-piece"></i><span> 碎碎念</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/life/"><i class="fa-fw fa fa-edit"></i><span> 每日一言</span></a></div><div class="menus_item"><a class="site-page" href="/xiangcepage/"><i class="fa-fw fa fa-image"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-address-card"></i><span> 关于我</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/about/"><i class="fa-fw fa fa-graduation-cap"></i><span> 简历</span></a></li><li><a class="site-page" href="/show/"><i class="fa-fw fa fa-street-view"></i><span> 个人爱好</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-paperclip"></i><span> 照片集</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/lol/"><i class="fa-fw fa fa-flag"></i><span> 照片墙</span></a></li><li><a class="site-page" href="/haizeiwang/"><i class="fa-fw fa fa-ship"></i><span> 海贼王</span></a></li><li><a class="site-page" href="/3d-gallery/"><i class="fa-fw fa fa-university"></i><span> 3D照片屋</span></a></li><li><a class="site-page" href="/video/"><i class="fa-fw fa fas fa-video"></i><span> 视频集</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-archive"></i><span> 小工具</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/time/"><i class="fa-fw fa fa-clock"></i><span> 小时钟</span></a></li><li><a class="site-page" href="/E-book/"><i class="fa-fw fa fa-book"></i><span> 电子书</span></a></li><li><a class="site-page" href="/black/"><i class="fa-fw fa fa-sticky-note"></i><span> 小黑板</span></a></li><li><a class="site-page" href="/draw/"><i class="fa-fw fa fa-paint-brush"></i><span> 小画板</span></a></li><li><a class="site-page" href="/cal/"><i class="fa-fw fa fa-band-aid"></i><span> 计算器</span></a></li><li><a class="site-page" href="/3d/"><i class="fa-fw fa fa-baby-carriage"></i><span> 3D抽奖</span></a></li><li><a class="site-page" href="/night/"><i class="fa-fw fa fa-star"></i><span> 星空弹幕</span></a></li><li><a class="site-page" href="/houseloan/"><i class="fa-fw fa fa-male"></i><span> 房贷计算器</span></a></li><li><a class="site-page" href="/font/"><i class="fa-fw fa fa fa-broom"></i><span> 闪电绘制文字</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-gamepad"></i><span> 小游戏</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/game2/"><i class="fa-fw fa fa-gamepad"></i><span> 打字游戏</span></a></li><li><a class="site-page" href="/game1/"><i class="fa-fw fa fa-gamepad"></i><span> 星球防御</span></a></li><li><a class="site-page" href="/game3/"><i class="fa-fw fa fa-gamepad"></i><span> 中国象棋</span></a></li><li><a class="site-page" href="/game4/"><i class="fa-fw fa fa-gamepad"></i><span> 神奇画笔</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li><li><a class="site-page" href="/books/"><i class="fa-fw fa fa-book"></i><span> 图书</span></a></li><li><a class="site-page" href="/games/"><i class="fa-fw fa fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page" href="/sansi/"><i class="fa-fw fa fa-building"></i><span> 公司</span></a></li><li><a class="site-page" href="/school/"><i class="fa-fw fa fa-graduation-cap"></i><span> 母校</span></a></li><li><a class="site-page" href="/houtai/"><i class="fa-fw fa fa-wrench"></i><span> 后台</span></a></li><li><a class="site-page" href="/tiangou/"><i class="fa-fw fas fa-atlas"></i><span> 舔狗日记</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/picture/img-2/20200927145549.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">LXY`S BLOG</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/message/"><i class="fa-fw fa fa-comment-dots"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/map/"><i class="fa-fw fa fa-globe"></i><span> 世界地图</span></a></div><div class="menus_item"><a class="site-page" href="/artitalk/"><i class="fa-fw fa fa-puzzle-piece"></i><span> 碎碎念</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/life/"><i class="fa-fw fa fa-edit"></i><span> 每日一言</span></a></div><div class="menus_item"><a class="site-page" href="/xiangcepage/"><i class="fa-fw fa fa-image"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-address-card"></i><span> 关于我</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/about/"><i class="fa-fw fa fa-graduation-cap"></i><span> 简历</span></a></li><li><a class="site-page" href="/show/"><i class="fa-fw fa fa-street-view"></i><span> 个人爱好</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-paperclip"></i><span> 照片集</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/lol/"><i class="fa-fw fa fa-flag"></i><span> 照片墙</span></a></li><li><a class="site-page" href="/haizeiwang/"><i class="fa-fw fa fa-ship"></i><span> 海贼王</span></a></li><li><a class="site-page" href="/3d-gallery/"><i class="fa-fw fa fa-university"></i><span> 3D照片屋</span></a></li><li><a class="site-page" href="/video/"><i class="fa-fw fa fas fa-video"></i><span> 视频集</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-archive"></i><span> 小工具</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/time/"><i class="fa-fw fa fa-clock"></i><span> 小时钟</span></a></li><li><a class="site-page" href="/E-book/"><i class="fa-fw fa fa-book"></i><span> 电子书</span></a></li><li><a class="site-page" href="/black/"><i class="fa-fw fa fa-sticky-note"></i><span> 小黑板</span></a></li><li><a class="site-page" href="/draw/"><i class="fa-fw fa fa-paint-brush"></i><span> 小画板</span></a></li><li><a class="site-page" href="/cal/"><i class="fa-fw fa fa-band-aid"></i><span> 计算器</span></a></li><li><a class="site-page" href="/3d/"><i class="fa-fw fa fa-baby-carriage"></i><span> 3D抽奖</span></a></li><li><a class="site-page" href="/night/"><i class="fa-fw fa fa-star"></i><span> 星空弹幕</span></a></li><li><a class="site-page" href="/houseloan/"><i class="fa-fw fa fa-male"></i><span> 房贷计算器</span></a></li><li><a class="site-page" href="/font/"><i class="fa-fw fa fa fa-broom"></i><span> 闪电绘制文字</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-gamepad"></i><span> 小游戏</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/game2/"><i class="fa-fw fa fa-gamepad"></i><span> 打字游戏</span></a></li><li><a class="site-page" href="/game1/"><i class="fa-fw fa fa-gamepad"></i><span> 星球防御</span></a></li><li><a class="site-page" href="/game3/"><i class="fa-fw fa fa-gamepad"></i><span> 中国象棋</span></a></li><li><a class="site-page" href="/game4/"><i class="fa-fw fa fa-gamepad"></i><span> 神奇画笔</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li><li><a class="site-page" href="/books/"><i class="fa-fw fa fa-book"></i><span> 图书</span></a></li><li><a class="site-page" href="/games/"><i class="fa-fw fa fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page" href="/sansi/"><i class="fa-fw fa fa-building"></i><span> 公司</span></a></li><li><a class="site-page" href="/school/"><i class="fa-fw fa fa-graduation-cap"></i><span> 母校</span></a></li><li><a class="site-page" href="/houtai/"><i class="fa-fw fa fa-wrench"></i><span> 后台</span></a></li><li><a class="site-page" href="/tiangou/"><i class="fa-fw fas fa-atlas"></i><span> 舔狗日记</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">云计算术语扫盲<a class="post-edit-link" href="null_posts/00346.md" title="编辑" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-09-27T06:57:13.000Z" title="发表于 2020-09-27 14:57:13">2020-09-27</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-10-23T07:19:37.235Z" title="更新于 2020-10-23 15:19:37">2020-10-23</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/YUN/">YUN</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h3><p>在云计算中，资源和服务本质上是一样的，服务可能会更范一些，资源一般特指CPU(计算)、Mem(存储)和IO(网络)三大资源，云计算的做法就是将闲置的这些资源充分利用起来,租给用户使用。我觉得这也有点共享经济的意思，大家把自己身边闲置的资源拿出来,分享给别人使用，我为人人，人人为我。只不过云计算这种资源比较奢侈，一般人还提供不起，只有那些大企业，在满足自己业务需求之余，还空闲着很多资源，所以与其浪费掉，还不如租给用户去使用，这样既避免了浪费，还能赚钱。</p>
+<h3 id="云部署类型"><a href="#云部署类型" class="headerlink" title="云部署类型"></a>云部署类型</h3><p>资源很多，就会有一个问题,这些资源该放在哪，以及怎么放，这就涉及到云计算资源的部署类型，根据放的地方不通，可以分为公有云、私有云、混合云。公有云就是放在一个公共的地方，这个地方有个术语叫做云服务提供商，这一般都是大公司，小公司还玩不转；私有云则是放在企业内部，一般供自身业务需求；而混合云则是两者融合起来，公有云服务体量大的业务，私有云负责数据的安全。而根据怎么放，近年来已经出现了很多新花样，譬如把和政务相关的资源放一块，形成政务云，跟金融相关的放一块又形成金融云，类似的还有视频云、音乐云、直播云等。</p>
+<h3 id="云服务类型"><a href="#云服务类型" class="headerlink" title="云服务类型"></a>云服务类型</h3><p>资源整合起来，就需要对外提供服务，用户那么多，可能每个用户的服务的需求不一样，该怎么满足用户多样的需求，是一个非常关键的问题。比如用户想要一个开发环境，想立马就上手Coding，你就不能纯粹给他一个裸机资源。又如用户想用email服务，你也必须给他装好相应的软件，用户只需要动动手指就可以使用。所以，根据提供给放服务类型的不同，可以将云服务分为LaaS(基础设施即服务)、PaaS（平台即服务） 和 SaaS（软件即服务）。同样，如果再细分的话，类似的还有 DaaS（数据即服务）、SDNaaS（SDN 即服务）、CaaS（容器即服务）等。</p>
+<h3 id="公有云"><a href="#公有云" class="headerlink" title="公有云"></a>公有云</h3><p>上面已经说了一些，这里严格定义一下，公有云一般为云服务器提供商所拥有和运营，包括所有硬件、软件和其他支撑性基础设施资源，通过网络向用户提供其资源，用户可以通过web等方式来访问这些资源。业界比较有名的公有云厂商有Amazon AWS、Microsoft Azure、Google Cloud、阿里云、腾讯云、百度云、UCloud 等。</p>
+<h3 id="私有云"><a href="#私有云" class="headerlink" title="私有云"></a>私有云</h3><p>私有云是专攻一个企业或组织使用的云计算资源，一般部署在自家数据中心上，也可以付费给第三方的提供商托管。在私有云中，通过专用网络来维护其服务和基础结构，因而安全性会比较高。业界比较有名的私有云厂商有:VMware,Nutanix,深信服、华为云、青云等。</p>
+<h3 id="混合云"><a href="#混合云" class="headerlink" title="混合云"></a>混合云</h3><p>混合云组合了公有云和私有云，通过技术手段支持数据和应用程序在两者之前迁移，能够为企业提供更大的灵活和更多的部署选项。</p>
+<h3 id="Laas"><a href="#Laas" class="headerlink" title="Laas"></a>Laas</h3><p>IaaS 提供的是比较底层的云计算服务，如服务器和虚拟机、存储空间、网络和操作系统，用户可以根据自己的需求租用特定的资源即可，云服务提供商管理和维护着这些资源，用户只需要购买、安装、配置和管理所需的软件，就可以构建自己的业务系统。</p>
+<p>常见的LaaS服务商:亚马逊的EC2，微软的Azure，Rackspace的OpenStack，IBM，VMWare的vCloud；国内的如阿里云（aliyun），腾讯云以及移动的大云（big cloud）等等。</p>
+<h3 id="Paas"><a href="#Paas" class="headerlink" title="Paas"></a>Paas</h3><p>PaaS 则可以按需提供开发、测试、交付和管理应用程序所需的环境，包括中间件和数据库相关的基础结构。用户可以专注在自己的业务逻辑上，无需关心环境的问题，因为一切都就绪，你就开干就行了。</p>
+<p>常见的PaaS服务商：AWS Elastic Beanstalk，Heroku，Force.com，谷歌的GAE（ Google App Engine），新浪SAE，百度云的开发引擎等</p>
+<h3 id="Saas"><a href="#Saas" class="headerlink" title="Saas"></a>Saas</h3><p>SaaS 则是提供实在的软件服务，一般用户通过订阅的方式来使用软件，随时随地都可以在云上使用现成的软件，无需下载安装，也无需关心软件升级和维护问题，因为这一切在云端都已经帮你做了。</p>
+<p>常见的SaaS服务商：谷歌的Apps，微软的Office 365，Citrix的CloudStack，以及目前比较火的各种云存储（网盘），云相册，云备份，云打印，云监控等正对个人用的云服务产品</p>
+<h3 id="虚拟机"><a href="#虚拟机" class="headerlink" title="虚拟机"></a>虚拟机</h3><p>虚拟机是资源的的具象，资源太抽象了，虽然说包括但不限于计算、存储和网络这三大资源，但是这些资源都是统一放在一个“池子”里，如何管理这些资源，并根据用户的需求合理地进行划分，虚拟机就是一种非常好的资源管理方式，它将物理主机上的资源进行细分，一个虚拟机使用一部分，彼此之间不会影响。在外部看来，它就像是一台真实的物理主机一样，拥有和主机该有的一切配置，包括 CPU、内存和 IO，只不过这些都是通过程序虚拟出来的</p>
+<h3 id="虚拟化"><a href="#虚拟化" class="headerlink" title="虚拟化"></a>虚拟化</h3><p>虚拟化就是将资源进行细分（虚拟）的一门技术，它可以虚拟计算、虚拟存储、虚拟网络，以及虚拟网络功能。它的一个宗旨就是将闲置的资源划分出来，虚构一个和真实物理环境没有差别的虚拟环境，这样，用户在使用资源的时候，就像是在使用一台真实物理机一样。常见的虚拟化技术有 KVM、Xen、Qemu 等。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">刘向洋</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://liuxiangyang.space/2020/09/27/00346/">https://liuxiangyang.space/2020/09/27/00346/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://liuxiangyang.space" target="_blank">LXY`S BLOG</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/picture/img-2/20200927145549.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/cloudimg/img/f72ec36ac580f0c27f664799ae90a69.png" target="_blank"><img class="post-qr-code-img" data-lazy-src="https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/cloudimg/img/f72ec36ac580f0c27f664799ae90a69.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/cloudimg/img/18b58b70df64c9aed8fdc2d39692018.png" target="_blank"><img class="post-qr-code-img" data-lazy-src="https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/cloudimg/img/18b58b70df64c9aed8fdc2d39692018.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><div class="ads-wrap"><ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-ad-client="ca-pub-1212350841814319" data-ad-slot="1265717074"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/09/27/00347/"><img class="prev-cover" data-lazy-src="https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/picture/img-2/20200927145549.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">undertown服务器详解</div></div></a></div><div class="next-post pull-right"><a href="/2020/10/08/00354/"><img class="next-cover" data-lazy-src="https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/cloudimg/img/20191126170915.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Centos8安装并配置NFS服务</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/cloudimg/img-2/微信图片_20200408193536.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">刘向洋</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">348</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">90</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">34</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://work.liuxiangyang.space/"><i class="fab fa-github"></i><span>工作页</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/LiuXiangYang-Git/LiuXiangYang-Git.github.io" target="_blank" title=""><i class="fab fa-github"></i></a><a class="social-icon" href="/love" target="_blank" title=""><i class="fas fa-heart"></i></a><a class="social-icon" href="/love2" target="_blank" title=""><i class="fa fa-birthday-cake"></i></a><a class="social-icon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=1330561079&amp;site=qq&amp;menu=yes" target="_blank" title=""><i class="fab fa-qq"></i></a><a class="social-icon" href="https://blog.csdn.net/liuxiangyang_" target="_blank" title=""><i class="fa fa-copyright"></i></a><a class="social-icon" href="/snow" target="_blank" title=""><i class="fas fa-snowflake"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title=""><i class="fa fa-rss"></i></a><a class="social-icon" href="mailto:liuxiangyangsansi@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">你眼中的星海灿烂是我不曾见过的世外桃源！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B5%84%E6%BA%90"><span class="toc-number">1.</span> <span class="toc-text">资源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%91%E9%83%A8%E7%BD%B2%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">云部署类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%91%E6%9C%8D%E5%8A%A1%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.</span> <span class="toc-text">云服务类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AC%E6%9C%89%E4%BA%91"><span class="toc-number">4.</span> <span class="toc-text">公有云</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%81%E6%9C%89%E4%BA%91"><span class="toc-number">5.</span> <span class="toc-text">私有云</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%B7%E5%90%88%E4%BA%91"><span class="toc-number">6.</span> <span class="toc-text">混合云</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Laas"><span class="toc-number">7.</span> <span class="toc-text">Laas</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Paas"><span class="toc-number">8.</span> <span class="toc-text">Paas</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Saas"><span class="toc-number">9.</span> <span class="toc-text">Saas</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA"><span class="toc-number">10.</span> <span class="toc-text">虚拟机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E5%8C%96"><span class="toc-number">11.</span> <span class="toc-text">虚拟化</span></a></li></ol></div></div><div class="card-widget card-clock"><div id="clock"><img v-if="clockshow == &quot;false&quot;" alt="" src="/assets/weather/loading.gif" height="120px" width="100%"/><table class="clock" v-if="clockshow"><tbody><tr><td class="clockdate">{{date}}</td><td class="weatherimg"><img id="weatherimg" :src="weatherimg" alt=""/></td><td class="temperature">{{temperature}}</td><td class="humidityimg"><img id="humidityimg" :src="humidityimg" alt=""/></td><td class="humidity">{{humidity}}</td></tr><tr class="time"><td colspan="5">{{time}}</td></tr><tr><td class="usaqi" colspan="1"><span>{{ip}}</span></td><td class="city" colspan="2">{{city}}</td><td class="daylight" colspan="2">{{daylight}}</td></tr></tbody></table></div></div><script defer="defer" data-pjax="data-pjax" src="/js/card_clock.js"></script><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/04/09/00379/" title="Jenkins之手动安装构建工具Maven"><img data-lazy-src="https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/picture/img-2/20210409130545.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Jenkins之手动安装构建工具Maven"/></a><div class="content"><a class="title" href="/2021/04/09/00379/" title="Jenkins之手动安装构建工具Maven">Jenkins之手动安装构建工具Maven</a><time datetime="2021-04-09T08:57:12.000Z" title="发表于 2021-04-09 16:57:12">2021-04-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/04/09/00378/" title="如何在Linux服务器上查找JDK安装路径"><img data-lazy-src="https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/cloudimg/img/adadadav.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="如何在Linux服务器上查找JDK安装路径"/></a><div class="content"><a class="title" href="/2021/04/09/00378/" title="如何在Linux服务器上查找JDK安装路径">如何在Linux服务器上查找JDK安装路径</a><time datetime="2021-04-09T08:57:12.000Z" title="发表于 2021-04-09 16:57:12">2021-04-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/04/09/00375/" title="Jenkins之手动安装构建工具Ant"><img data-lazy-src="https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/picture/img-2/20210409130109.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Jenkins之手动安装构建工具Ant"/></a><div class="content"><a class="title" href="/2021/04/09/00375/" title="Jenkins之手动安装构建工具Ant">Jenkins之手动安装构建工具Ant</a><time datetime="2021-04-09T08:57:12.000Z" title="发表于 2021-04-09 16:57:12">2021-04-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/04/07/00377/" title="个人博客如何加入谷歌广告"><img data-lazy-src="https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/picture/img-2/20210407161018.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="个人博客如何加入谷歌广告"/></a><div class="content"><a class="title" href="/2021/04/07/00377/" title="个人博客如何加入谷歌广告">个人博客如何加入谷歌广告</a><time datetime="2021-04-07T09:57:15.000Z" title="发表于 2021-04-07 17:57:15">2021-04-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/04/07/00376/" title="Ceph架构简介及使用"><img data-lazy-src="https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/picture/img-2/20210407155124.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Ceph架构简介及使用"/></a><div class="content"><a class="title" href="/2021/04/07/00376/" title="Ceph架构简介及使用">Ceph架构简介及使用</a><time datetime="2021-04-07T09:57:13.000Z" title="发表于 2021-04-07 17:57:13">2021-04-07</time></div></div></div></div><div class="card-widget ads-wrap"><ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-ad-client="ca-pub-1212350841814319" data-ad-slot="1265717074"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div></div></div></main><footer id="footer" style="background-image: url('https://cdn.jsdelivr.net/gh/LiuXiangYang-Git/picture/img-2/20200927145549.png')"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2021 By 刘向洋</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a href="https://liuxiangyang.space/">blog</a>!</div><div id="workboard"></div><script async="async" src="/js/runtime.js"></script></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="rightside.chat_btn"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="algolia-search"><div class="search-dialog"><div class="search-dialog__title" id="algolia-search-title">Algolia</div><div id="algolia-input-panel"><div id="algolia-search-input"></div></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-stats"></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="/js/search/algolia.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    let initData = {
+      el: '#vcomment',
+      appId: 'X7SXf1j7gKnfRPiMfcWveBya-gzGzoHsz',
+      appKey: '4xxDXRqYDcaPFCv6jDJxlBp0',
+      placeholder: '请留下你的足迹，欢迎留言！',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-cn',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: {"tv_doge":"6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png","tv_亲亲":"a8111ad55953ef5e3be3327ef94eb4a39d535d06.png","tv_偷笑":"bb690d4107620f1c15cff29509db529a73aee261.png","tv_再见":"180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png","tv_冷漠":"b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png","tv_发怒":"34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png","tv_发财":"34db290afd2963723c6eb3c4560667db7253a21a.png","tv_可爱":"9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png","tv_吐血":"09dd16a7aa59b77baa1155d47484409624470c77.png","tv_呆":"fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png","tv_呕吐":"9f996894a39e282ccf5e66856af49483f81870f3.png","tv_困":"241ee304e44c0af029adceb294399391e4737ef2.png","tv_坏笑":"1f0b87f731a671079842116e0991c91c2c88645a.png","tv_大佬":"093c1e2c490161aca397afc45573c877cdead616.png","tv_大哭":"23269aeb35f99daee28dda129676f6e9ea87934f.png","tv_委屈":"d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png","tv_害羞":"a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png","tv_尴尬":"7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png","tv_微笑":"70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png","tv_思考":"90cf159733e558137ed20aa04d09964436f618a1.png","tv_惊吓":"0d15c7e2ee58e935adc6a7193ee042388adc22af.png"},
+      enableQQ: false,
+      path: window.location.pathname,
+      master: 'c9a735260d42f6354cf460ecb17bb8c4,06a3a244f047788db8641d58b08031f0'.split(','),
+      friends: ''.split(','),
+      tagMeta: '博主,小伙伴,访客'.split(',')
+    }
+
+    if (true) { 
+      initData.requiredFields= ('nick,mail'.split(','))
+    }
+    
+    if (false) {
+      const otherData = false
+      initData = Object.assign(initData, otherData)
+    }
+    
+    const valine = new Valine(initData)
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script defer src="/live2d-widget/autoload.js"></script><div class="aplayer no-destroy" data-id="3393993217" data-server="tencent" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="false" data-text="富强,民主,文明,和谐,自由,平等,公正,法治,爱国,敬业,诚信,友善" data-fontsize="15px" data-random="false" async="async"></script><script src="//code.tidio.co/iyvkqo3auxbyyqlpc6lho7vthd1wscwt.js" async="async"></script><script>function onTidioChatApiReady() {
+  window.tidioChatApi.hide();
+  window.tidioChatApi.on("close", function() {
+    window.tidioChatApi.hide();
+  });
+}
+if (window.tidioChatApi) {
+  window.tidioChatApi.on("ready", onTidioChatApiReady);
+} else {
+  document.addEventListener("tidioChat-ready", onTidioChatApiReady);
+}
+
+var chatBtnFn = () => {
+  document.getElementById("chat_btn").addEventListener("click", function(){
+    window.tidioChatApi.show();
+    window.tidioChatApi.open();
+  });
+}
+chatBtnFn()
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
