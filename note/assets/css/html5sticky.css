@@ -1,0 +1,270 @@
+/* common styles start */
+h1{font-size:2em;}
+h2{font-size:1em;}
+a,a:visited{color:#fff;outline:none !important;text-decoration:none;}
+a img,a:visited img{border:none;}
+textarea{overflow:auto;}
+/* common styles end */
+
+#addnote{display:block;margin:5px;width:auto;float:left;width: 25px;height: 25px;}
+#removenotes{display:block;margin:5px;width:auto;float:left;width: 25px;height: 25px;}
+
+#main{margin:auto;background:url("../img/bg.png");color:#fff;padding:10px;height: 600px;overflow: hidden;}
+
+.left{float:left;}
+.right{float:right;}
+.clear{clear:both;}
+
+
+footer{
+   margin:auto;
+   width:300px;
+}
+
+.note_common, .bignote, .editinfo{
+    padding:20px 10px 10px 10px;
+    color:#000;
+    float:left;
+    margin:20px;
+    margin-top:0;
+    position:relative;
+    cursor:pointer;
+    border: 3px solid white;
+
+    /* page effect start */
+	-webkit-border-bottom-left-radius: 20px 500px;
+	-webkit-border-bottom-right-radius: 500px 30px;
+	-webkit-border-top-right-radius: 5px 100px;
+
+	-moz-border-radius-bottomleft: 20px 500px;
+	-moz-border-radius-bottomright: 500px 30px;
+	-moz-border-radius-topright: 5px 100px;
+
+	border-radius-bottomleft: 20px 500px;
+	border-radius-bottomright: 500px 30px;
+	border-radius-topright: 5px 100px;
+
+	-webkit-box-shadow: 0 2px 10px 1px rgba(0,0,0,.2);
+	-moz-box-shadow: 0 2px 10px 1px rgba(0,0,0,.2);
+	box-shadow: 0 2px 10px 1px rgba(0,0,0,.2);     
+
+    /* page effect end */
+
+    -moz-box-shadow: -7px 10px rgba(0,0,0,0.3);
+    -webkit-box-shadow: -7px 10px rgba(0,0,0,0.3);
+    box-shadow: -7px 10px rgba(0,0,0,0.3);
+}
+
+
+/* for rotation start */
+.rotateR{
+   -moz-transform:    rotate(3deg);
+   -o-transform:      rotate(3deg);
+   -webkit-transform: rotate(3deg);
+   transform:         rotate(3deg);
+
+/*
+ * The following two rules are for IE only and
+ * should be wrapped in conditional comments.
+ * The -ms-filter rule should be on one line 
+ * and always *before* the filter rule if
+ * used in the same rule.
+ */
+
+   /* IE8+ - must be on one line, unfortunately */ 
+   -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.9986295347545738, M12=-0.05233595624294437, M21=0.05233595624294437, M22=0.9986295347545738, SizingMethod='auto expand')";
+   
+   /* IE6 and 7 */ 
+   filter: progid:DXImageTransform.Microsoft.Matrix(
+            M11=0.9986295347545738,
+            M12=-0.05233595624294437,
+            M21=0.05233595624294437,
+            M22=0.9986295347545738,
+            SizingMethod='auto expand');
+
+
+   /*
+    * To make the transform-origin be the middle of
+    * the object.    Note: These numbers
+    * are approximations.  For more accurate results,
+    * use Internet Explorer with this tool.
+    */
+   margin-left: -4px; 
+   margin-top: -8px;
+}
+
+.rotateL{
+   -moz-transform:    rotate(-3deg);
+   -o-transform:      rotate(-3deg);
+   -webkit-transform: rotate(-3deg);
+   transform:         rotate(-3deg);
+
+   -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.9986295347545738, M12=0.05233595624294388, M21=-0.05233595624294388, M22=0.9986295347545738, SizingMethod='auto expand')";
+   
+   filter: progid:DXImageTransform.Microsoft.Matrix(
+            M11=0.9986295347545738,
+            M12=0.05233595624294388,
+            M21=-0.05233595624294388,
+            M22=0.9986295347545738,
+            SizingMethod='auto expand');
+
+   margin-left: -4px; 
+   margin-top: -8px;
+}
+/* for rotation end */
+
+.note_common h2{
+    text-align:center;
+    margin-top:0;
+    padding-top:0;
+    font-family: 微软雅黑,Microsoft YaHei;
+}
+
+.note_common p{
+    font-size:0.9em;
+    overflow:auto;
+    overflow-x:hidden;
+    line-height:18px;
+    text-align:left;
+    font-family: 'Architects Daughter', cursive;
+}
+
+.inset{
+   -moz-box-shadow:inset 0 0 10px #cccccc;
+   -webkit-box-shadow:inset 0 0 10px #cccccc;
+   box-shadow:inset 0 0 10px #cccccc;
+   background:#f8f7f7;
+   color:#333;
+   padding:5px;
+   font-size:0.9em;
+   border:1px solid #e7e7e7;
+   font-family: 'Architects Daughter', cursive;
+}
+
+input:focus,textarea:focus,select:focus{border:1px solid #fafafa;-webkit-box-shadow:0 0 6px #000;-moz-box-shadow:0 0 5px #000;box-shadow:0 0 5px #000;}
+
+.tip{
+   background:url(../img/tip.png) no-repeat;
+   font-size:13px;
+   padding-left:25px;
+   padding-top:3px;
+   vertical-align:middle;
+}
+
+.icons-footer .ficon{
+   margin-left:10px;
+   position:absolute;
+   bottom:-15px;
+}
+
+/* for sticky note background oolors */
+
+.stickynote0 {
+   background-color: #99FF41;
+   background-image: -webkit-gradient(linear, left top, left bottom, from(#99FF41), to(#53B00A)); 
+   background-image: -webkit-linear-gradient(top, #99FF41, #53B00A); 
+   background-image:    -moz-linear-gradient(top, #99FF41, #53B00A); 
+   background-image:     -ms-linear-gradient(top, #99FF41, #53B00A); 
+   background-image:      -o-linear-gradient(top, #99FF41, #53B00A); 
+   background-image:         linear-gradient(top, #99FF41, #53B00A);
+   filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#99FF41', EndColorStr='#53B00A');
+}
+
+.stickynote1 {
+   background-color: #3889C5;
+   background-image: -webkit-gradient(linear, left top, left bottom, from(#3889C5), to(#024B7E)); 
+   background-image: -webkit-linear-gradient(top, #3889C5, #024B7E); 
+   background-image:    -moz-linear-gradient(top, #3889C5, #024B7E); 
+   background-image:     -ms-linear-gradient(top, #3889C5, #024B7E); 
+   background-image:      -o-linear-gradient(top, #3889C5, #024B7E); 
+   background-image:         linear-gradient(top, #3889C5, #024B7E);
+   filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#3889C5', EndColorStr='#024B7E');
+}
+
+.stickynote2 {
+    background-color: #FF4FBF;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#FF4FBF), to(#C61684)); 
+    background-image: -webkit-linear-gradient(top, #FF4FBF, #C61684); 
+    background-image:    -moz-linear-gradient(top, #FF4FBF, #C61684); 
+    background-image:     -ms-linear-gradient(top, #FF4FBF, #C61684); 
+    background-image:      -o-linear-gradient(top, #FF4FBF, #C61684); 
+    background-image:         linear-gradient(top, #FF4FBF, #C61684);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#FF4FBF', EndColorStr='#C61684');
+}
+
+.stickynote3{
+    background-color: #FF3F1E;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#FF3F1E), to(#F02504)); 
+    background-image: -webkit-linear-gradient(top, #FF3F1E, #F02504); 
+    background-image:    -moz-linear-gradient(top, #FF3F1E, #F02504); 
+    background-image:     -ms-linear-gradient(top, #FF3F1E, #F02504); 
+    background-image:      -o-linear-gradient(top, #FF3F1E, #F02504); 
+    background-image:         linear-gradient(top, #FF3F1E, #F02504);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#FF3F1E', EndColorStr='#F02504');
+}
+
+.stickynote4{
+    background-color: #DCC37D;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#DCC37D), to(#988744)); 
+    background-image: -webkit-linear-gradient(top, #DCC37D, #988744); 
+    background-image:    -moz-linear-gradient(top, #DCC37D, #988744); 
+    background-image:     -ms-linear-gradient(top, #DCC37D, #988744); 
+    background-image:      -o-linear-gradient(top, #DCC37D, #988744); 
+    background-image:         linear-gradient(top, #DCC37D, #988744);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#DCC37D', EndColorStr='#988744');
+}
+
+.stickynote5{
+    background-color: #5F36BC;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#5F36BC), to(#250082)); 
+    background-image: -webkit-linear-gradient(top, #5F36BC, #250082); 
+    background-image:    -moz-linear-gradient(top, #5F36BC, #250082); 
+    background-image:     -ms-linear-gradient(top, #5F36BC, #250082); 
+    background-image:      -o-linear-gradient(top, #5F36BC, #250082); 
+    background-image:         linear-gradient(top, #5F36BC, #250082);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#5F36BC', EndColorStr='#250082');
+}
+
+.stickynote6{
+    background-color: #A5C2FF;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#A5C2FF), to(#6986F4)); 
+    background-image: -webkit-linear-gradient(top, #A5C2FF, #6986F4); 
+    background-image:    -moz-linear-gradient(top, #A5C2FF, #6986F4); 
+    background-image:     -ms-linear-gradient(top, #A5C2FF, #6986F4); 
+    background-image:      -o-linear-gradient(top, #A5C2FF, #6986F4); 
+    background-image:         linear-gradient(top, #A5C2FF, #6986F4);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#A5C2FF', EndColorStr='#6986F4');
+}
+
+.stickynote7{
+    background-color: #FEBFBF;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#FEBFBF), to(#FE8080)); 
+    background-image: -webkit-linear-gradient(top, #FEBFBF, #FE8080); 
+    background-image:    -moz-linear-gradient(top, #FEBFBF, #FE8080); 
+    background-image:     -ms-linear-gradient(top, #FEBFBF, #FE8080); 
+    background-image:      -o-linear-gradient(top, #FEBFBF, #FE8080); 
+    background-image:         linear-gradient(top, #FEBFBF, #FE8080);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#FEBFBF', EndColorStr='#FE8080');
+}
+
+.stickynote8{
+    background-color: #FEBF80;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#FEBF80), to(#FF8000)); 
+    background-image: -webkit-linear-gradient(top, #FEBF80, #FF8000); 
+    background-image:    -moz-linear-gradient(top, #FEBF80, #FF8000); 
+    background-image:     -ms-linear-gradient(top, #FEBF80, #FF8000); 
+    background-image:      -o-linear-gradient(top, #FEBF80, #FF8000); 
+    background-image:         linear-gradient(top, #FEBF80, #FF8000);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#FEBF80', EndColorStr='#FF8000');
+}
+
+.stickynote9{
+    background-color: #FEF280;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#FEF280), to(#FFE500)); 
+    background-image: -webkit-linear-gradient(top, #FEF280, #FFE500); 
+    background-image:    -moz-linear-gradient(top, #FEF280, #FFE500); 
+    background-image:     -ms-linear-gradient(top, #FEF280, #FFE500); 
+    background-image:      -o-linear-gradient(top, #FEF280, #FFE500); 
+    background-image:         linear-gradient(top, #FEF280, #FFE500);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#FEF280', EndColorStr='#FFE500');
+}

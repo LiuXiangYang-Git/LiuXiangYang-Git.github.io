@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<meta charset="UTF-8">
+<title>firework</title>
+<link rel="stylesheet" href="css/style.css">
+<link href="css/player.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<canvas id="canvas"></canvas>
+
+<div id="jp_container_N" class="jp-video jp-video-270p jp-state-playing" role="application" aria-label="media player">
+        <div class="jp-type-playlist">
+            <!-- 播放器界面 -->
+            <div id="jquery_jplayer_N" class="jp-jplayer"></div>
+            <div class="jp-gui">
+                <!-- 标题 -->
+                <div class="jp-music-title">歌名</div>
+                <div class="jp-video-play" style="display: none;">
+                    <button class="jp-video-play-icon" role="button" tabindex="0">播放</button>
+                </div>
+                <div class="jp-interface">
+                    <div class="jp-progress">
+                        <div class="jp-seek-bar" style="width: 100%;">
+                            <div class="jp-play-bar" style="overflow: hidden; width: 97.5219%;"></div>
+                        </div>
+                    </div>
+                    <div class="jp-current-time" role="timer" aria-label="time">04:11</div>
+                    <div class="jp-duration" role="timer" aria-label="duration">04:17</div>
+                    <div class="jp-controls-holder">
+                        <div class="jp-controls">
+                            <button class="jp-previous" role="button" tabindex="0">上一曲</button>
+                            <button class="jp-play" role="button" tabindex="0">播放</button>
+                            <button class="jp-next" role="button" tabindex="0">下一曲</button>
+                            <button class="jp-stop" role="button" tabindex="0">暂停</button>
+                        </div>
+                        <div class="jp-volume-controls">
+                            <button class="jp-mute" role="button" tabindex="0">静音</button>
+                            <button class="jp-volume-max" role="button" tabindex="0">最大音量</button>
+                            <div class="jp-volume-bar">
+                                <div class="jp-volume-bar-value" style="width: 10%;"></div>
+                            </div>
+                        </div>
+                        <div class="jp-toggles">
+                            <button class="jp-repeat" role="button" tabindex="0">重复</button>
+                            <button class="jp-shuffle" role="button" tabindex="0">随机</button>
+                        </div>
+                    </div>
+                    <div class="jp-details" style="display: none;">
+                        <div class="jp-title" aria-label="title">music</div>
+                    </div>
+                </div>
+            </div>
+            <div class="jp-playlist">
+                <div class="jp-playlist-box">
+                    <ul>
+                    </ul>
+                </div>
+            </div>
+            <div class="jp-no-solution" style="display: none;">
+                <span style="transform: rotate(180deg);">升级需要</span>您浏览器赞不支持播放，请更新版本
+                <a href="http://get.adobe.com/flashplayer" target="_blank">Flash插件</a>.
+            </div>
+        </div>
+        <div class="scrollBar" style="display: none;">
+            <div class="bar"></div>
+        </div>
+        <button type="button" class="folded_bt" title="点击收缩" id="btnfold">
+            <span style="transform: rotate(180deg);"></span>
+        </button>
+        <!--<div id="listRemove" style="display: block;"></div>-->
+        <div id="listClose"></div>
+    </div>
+	<!--播放器js-->
+	<script>
+        <!-- 初始化 -->
+        var musicList = [{
+            title: "默",
+            artist: "那英",
+            mp3: "http://music.163.com/song/media/outer/url?id=465990119.mp3 ",
+            poster: "http://p1.music.126.net/OCGt5ln0lPPtPbVJ3VEKtA==/109951163020570422.jpg?param=130y130",
+			autoplay: "true"
+        }, {
+            title: "Fire",
+            artist: "Said The Sky",
+            mp3: "http://music.163.com/song/media/outer/url?id=435289279.mp3",
+            poster: "http://p1.music.126.net/tg2zke_mrqwuOPlEIEUjGg==/18294773975127592.jpg?param=130y130"
+        }];
+    </script>
+	<script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+	<script src="js/player.js"></script>
+	<script src="js/playlist.js"></script>
+	<script src="js/player_database.js"></script>
+
+<div class="block-audio">
+  <audio class="exp" src="m/exp1.mp3" controls></audio>
+  <audio class="exp" src="m/exp1.mp3" controls></audio>
+  <audio class="exp" src="m/exp1.mp3" controls></audio>
+  <audio class="exp" src="m/exp2.mp3" controls></audio>
+  <audio class="exp" src="m/exp2.mp3" controls></audio>
+  <audio class="exp" src="m/exp2.mp3" controls></audio>
+  <audio class="exp" src="m/exp3.mp3" controls></audio>
+  <audio class="exp" src="m/exp3.mp3" controls></audio>
+  <audio class="exp" src="m/exp3.mp3" controls></audio>
+  <audio class="exp" src="m/exp4.mp3" controls></audio>
+  <audio class="exp" src="m/exp4.mp3" controls></audio>
+  <audio class="exp" src="m/exp4.mp3" controls></audio>
+  <audio class="exp" src="m/exp5.mp3" controls></audio>
+  <audio class="exp" src="m/exp5.mp3" controls></audio>
+  <audio class="exp" src="m/exp5.mp3" controls></audio>
+  <audio class="exp" src="m/exp6.mp3" controls></audio>
+  <audio class="exp" src="m/exp6.mp3" controls></audio>
+  <audio class="exp" src="m/exp6.mp3" controls></audio>
+  <audio class="exp" src="m/exp7.mp3" controls></audio>
+  <audio class="exp" src="m/exp7.mp3" controls></audio>
+  <audio class="exp" src="m/exp7.mp3" controls></audio>
+  <audio class="exp" src="m/exp8.mp3" controls></audio>
+  <audio class="exp" src="m/exp8.mp3" controls></audio>
+  <audio class="exp" src="m/exp8.mp3" controls></audio>
+  <audio class="launch" src="m/launch1.mp3" controls></audio>
+  <audio class="launch" src="m/launch1.mp3" controls></audio>
+  <audio class="launch" src="m/launch2.mp3" controls></audio>
+  <audio class="launch" src="m/launch2.mp3" controls></audio>
+  <audio class="launch" src="m/launch3.mp3" controls></audio>
+  <audio class="launch" src="m/launch3.mp3" controls></audio>
+  <audio class="launch" src="m/launch4.mp3" controls></audio>
+  <audio class="launch" src="m/launch4.mp3" controls></audio>
+  <audio class="launch" src="m/launch5.mp3" controls></audio>
+  <audio class="launch" src="m/launch5.mp3" controls></audio>
+</div>
+<script src="http://www.jq22.com/jquery/2.1.1/jquery.min.js"></script>
+<script  src="js/index.js"></script>
+</body>
+</html>

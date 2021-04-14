@@ -1,0 +1,112 @@
+.Lunbo-video{
+	/* background-color:#dc2626; */
+	padding-top:0px;
+	padding-bottom:50px;
+}
+.Lunbo-video .Lunbo-video-title{
+	margin:20px auto 50px;
+}
+
+.Lunbo-video .Lunbo-video-title .Lunbo-video-h1{
+	font-size:30px;
+	color:#ef7700;
+	height:50px;
+	line-height:50px;
+}
+.Lunbo-video .Lunbo-video-title .Lunbo-video-h3{
+	font-size:32px;
+	color:#ffffff;
+}
+.Lunbo-video .Lunbo-video-cont{
+	margin-bottom:50px;
+	height: 100%;
+}
+.Lunbo-video li{
+	list-style: none;
+}
+.video{
+	width:80%;
+	margin:0 auto;
+	overflow: hidden;
+	zoom:1;
+	/* background: #ffffff; */
+}
+.video>div{
+	float: left;
+	height: 509px;
+}
+.video>div:first-child {
+	width: 5%;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	/* background: url('image\left.png') center center/cover no-repeat; */
+}
+.Lunbobutton{
+	width: 100%;
+	height: auto;
+}
+.video>div:last-child {
+	width: 5%;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	/* background: rgb(240, 13, 114); */
+	/* background: url('image\right.png') center center no-repeat; */
+}
+.video>div:nth-of-type(2){
+	width: 90%;
+}
+.video ul{
+	position: relative;
+}
+.video li{
+	transition: all .6s;
+	position: absolute;
+	background: url(../images/video-bg.png) center center no-repeat;
+	background-size: 100% 100%;}
+/*.video li>div{padding: 1% 1% 4%;}*/
+.video li video{
+	width:100%;
+	height:100%;
+}
+.video li h3{
+	text-align: center;
+	margin-top: 2px;
+	color: #1766d7;
+}
+
+.video1{
+	width:18%;
+	height: auto;
+	/* top: 143px; */
+	left: 0;
+	z-index: 1;
+	}/*创建5个播放框初始位置*/
+.video2{
+	width: 37%;
+	height: auto;
+	/* top: 86px; */
+	left: 8%;
+	z-index: 2;
+}
+.video3{
+	width: 64%;
+	height: auto;
+	/* top: 0px; */
+	left: 17%;
+	z-index: 3;
+}
+.video4{
+	width: 37%;
+	height: auto;
+	/* top: 86px; */
+	left: 54%;
+	z-index: 2;
+}
+.video5{
+	width:18%;
+	height: auto;
+	/* top: 143px; */
+	left: 82%;
+	z-index: 1;}
