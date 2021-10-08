@@ -6,7 +6,7 @@
   <link href="https://liuxiangyang.space/atom.xml" rel="self"/>
   
   <link href="https://liuxiangyang.space/"/>
-  <updated>2021-04-09T05:06:03.316Z</updated>
+  <updated>2021-10-08T06:38:34.609Z</updated>
   <id>https://liuxiangyang.space/</id>
   
   <author>
@@ -17,11 +17,62 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Jenkins之手动安装构建工具Maven</title>
-    <link href="https://liuxiangyang.space/2021/04/09/00379/"/>
-    <id>https://liuxiangyang.space/2021/04/09/00379/</id>
+    <title>Prometheus之exporter</title>
+    <link href="https://liuxiangyang.space/2021/10/08/00385/"/>
+    <id>https://liuxiangyang.space/2021/10/08/00385/</id>
+    <published>2021-10-08T10:57:12.000Z</published>
+    <updated>2021-10-08T06:38:34.609Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;简言&quot;&gt;&lt;a href=&quot;#简言&quot; class=&quot;headerlink&quot; title=&quot;简言&quot;&gt;&lt;/a&gt;简言&lt;/h3&gt;&lt;p&gt;这篇文章介绍一下Prometheus中Exporter的概念和常见的类型与使用方法。&lt;/p&gt;
+&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="Monitor" scheme="https://liuxiangyang.space/categories/Monitor/"/>
+    
+    
+    <category term="blog" scheme="https://liuxiangyang.space/tags/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Prometheus+Consul+Grafana搭建自动服务监控平台</title>
+    <link href="https://liuxiangyang.space/2021/10/08/00384/"/>
+    <id>https://liuxiangyang.space/2021/10/08/00384/</id>
+    <published>2021-10-08T06:20:12.000Z</published>
+    <updated>2021-10-08T06:27:34.310Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;简言&quot;&gt;&lt;a href=&quot;#简言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Monitor" scheme="https://liuxiangyang.space/categories/Monitor/"/>
+    
+    
+    <category term="blog" scheme="https://liuxiangyang.space/tags/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Jenkins之手动安装构建工具Ant</title>
+    <link href="https://liuxiangyang.space/2021/04/09/00375/"/>
+    <id>https://liuxiangyang.space/2021/04/09/00375/</id>
     <published>2021-04-09T08:57:12.000Z</published>
-    <updated>2021-04-09T05:06:03.316Z</updated>
+    <updated>2021-04-09T05:01:22.369Z</updated>
     
     
       
@@ -29,7 +80,7 @@
         
         
     <summary type="html">&lt;p&gt;1.配置好JDK，这里参考我之前的文章&lt;/p&gt;
-&lt;p&gt;2.下载maven&lt;/p&gt;
+&lt;p&gt;2.下载Ant&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span</summary>
         
       
@@ -69,11 +120,11 @@
   </entry>
   
   <entry>
-    <title>Jenkins之手动安装构建工具Ant</title>
-    <link href="https://liuxiangyang.space/2021/04/09/00375/"/>
-    <id>https://liuxiangyang.space/2021/04/09/00375/</id>
+    <title>Jenkins之手动安装构建工具Maven</title>
+    <link href="https://liuxiangyang.space/2021/04/09/00379/"/>
+    <id>https://liuxiangyang.space/2021/04/09/00379/</id>
     <published>2021-04-09T08:57:12.000Z</published>
-    <updated>2021-04-09T05:01:22.369Z</updated>
+    <updated>2021-04-09T05:06:03.316Z</updated>
     
     
       
@@ -81,7 +132,7 @@
         
         
     <summary type="html">&lt;p&gt;1.配置好JDK，这里参考我之前的文章&lt;/p&gt;
-&lt;p&gt;2.下载Ant&lt;/p&gt;
+&lt;p&gt;2.下载maven&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span</summary>
         
       
@@ -173,32 +224,6 @@
   </entry>
   
   <entry>
-    <title>问题解决-jsdelivr+github图床访问失效问题</title>
-    <link href="https://liuxiangyang.space/2021/04/07/00381/"/>
-    <id>https://liuxiangyang.space/2021/04/07/00381/</id>
-    <published>2021-04-07T08:57:12.000Z</published>
-    <updated>2021-04-07T08:46:09.543Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h3&gt;&lt;p&gt;如果太久没有更新github仓库，可能会导致原本已经上传了好久的一些图片访问失效。&lt;/p&gt;
-&lt;h3</summary>
-        
-      
-    
-    
-    
-    <category term="Github" scheme="https://liuxiangyang.space/categories/Github/"/>
-    
-    
-    <category term="blog" scheme="https://liuxiangyang.space/tags/blog/"/>
-    
-  </entry>
-  
-  <entry>
     <title>在华为交换机上实现基于时间的访问控制</title>
     <link href="https://liuxiangyang.space/2021/04/07/00383/"/>
     <id>https://liuxiangyang.space/2021/04/07/00383/</id>
@@ -221,6 +246,32 @@
     
     
     <category term="Network" scheme="https://liuxiangyang.space/categories/Network/"/>
+    
+    
+    <category term="blog" scheme="https://liuxiangyang.space/tags/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>问题解决-jsdelivr+github图床访问失效问题</title>
+    <link href="https://liuxiangyang.space/2021/04/07/00381/"/>
+    <id>https://liuxiangyang.space/2021/04/07/00381/</id>
+    <published>2021-04-07T08:57:12.000Z</published>
+    <updated>2021-04-07T08:46:09.543Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h3&gt;&lt;p&gt;如果太久没有更新github仓库，可能会导致原本已经上传了好久的一些图片访问失效。&lt;/p&gt;
+&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="Github" scheme="https://liuxiangyang.space/categories/Github/"/>
     
     
     <category term="blog" scheme="https://liuxiangyang.space/tags/blog/"/>
@@ -303,29 +354,6 @@
   </entry>
   
   <entry>
-    <title>服务器window2016数据中心版安装Oracle11g时遇到INS-13001环境不满足最低要求</title>
-    <link href="https://liuxiangyang.space/2021/02/24/00363/"/>
-    <id>https://liuxiangyang.space/2021/02/24/00363/</id>
-    <published>2021-02-24T09:57:12.000Z</published>
-    <updated>2021-03-25T00:46:40.320Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Oralce" scheme="https://liuxiangyang.space/categories/Oralce/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>电脑硬件之-主板</title>
     <link href="https://liuxiangyang.space/2021/02/24/00369/"/>
     <id>https://liuxiangyang.space/2021/02/24/00369/</id>
@@ -344,6 +372,29 @@
     
     
     <category term="IT HelpDesk" scheme="https://liuxiangyang.space/categories/IT-HelpDesk/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>服务器window2016数据中心版安装Oracle11g时遇到INS-13001环境不满足最低要求</title>
+    <link href="https://liuxiangyang.space/2021/02/24/00363/"/>
+    <id>https://liuxiangyang.space/2021/02/24/00363/</id>
+    <published>2021-02-24T09:57:12.000Z</published>
+    <updated>2021-03-25T00:46:40.320Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Oralce" scheme="https://liuxiangyang.space/categories/Oralce/"/>
     
     
   </entry>
@@ -470,56 +521,6 @@
     
     
     <category term="Computer" scheme="https://liuxiangyang.space/tags/Computer/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>利用Nginx反向代理搭建本地yum服务器</title>
-    <link href="https://liuxiangyang.space/2020/11/08/00365/"/>
-    <id>https://liuxiangyang.space/2020/11/08/00365/</id>
-    <published>2020-11-08T09:57:12.000Z</published>
-    <updated>2020-11-23T06:03:55.019Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Linux" scheme="https://liuxiangyang.space/categories/Linux/"/>
-    
-    
-    <category term="blog" scheme="https://liuxiangyang.space/tags/blog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Centos8安装并配置NFS服务</title>
-    <link href="https://liuxiangyang.space/2020/10/08/00354/"/>
-    <id>https://liuxiangyang.space/2020/10/08/00354/</id>
-    <published>2020-10-08T09:57:12.000Z</published>
-    <updated>2020-10-23T07:06:46.967Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Linux" scheme="https://liuxiangyang.space/categories/Linux/"/>
-    
-    
-    <category term="nfs" scheme="https://liuxiangyang.space/tags/nfs/"/>
     
   </entry>
   
